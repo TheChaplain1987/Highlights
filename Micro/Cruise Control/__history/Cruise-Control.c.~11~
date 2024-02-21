@@ -1,0 +1,61 @@
+#include <18f4520.h>
+#use delay (clock = 20000000)
+#fuses HS, NOWDT, NOLVP
+#include "../Library/myLibrary.h"
+#include "../Library/modifiedlcd.h"
+
+// Global variables
+float vin = 0.0;
+
+// Stop button ISR (B0)
+#INT_EXT
+void int_ext0_isr() {
+   output_toggle(PIN_B7);
+}
+
+// POT ISR (A to D) (A0)
+#INT_AD
+void int_ad_isr() {
+   vin = *Q * (5.0 / 1023.0 );
+}
+
+main() {
+   
+   // Initialize LCD
+   lcd_init();
+   
+   // Setup A to D (A0)
+   *TRISA = 0x01;            // CH0 Input
+   // ADCON1 -> PCFGx setup in stop button
+   ADCON0 -> ADON = 1;       // A/D ON
+   ADCON0 -> CHSx = 0;       // Channel Selector 0
+   ADCON1 -> VCFG0 = 0;      // Max ref default
+   ADCON1 -> VCFG1 = 0;      // Min ref default
+   ADCON2 -> ADFM = 1;       // Right justify LCD
+   ADCON2 -> ACQTx = 5;      // 12 T AD
+   ADCON2 -> ADCSx = 5;      // Fosc / 16
+   PIE1 -> ADIE = 1;
+   
+   
+   // Setup stop button on B0
+   ADCON1 -> PCFGx = 0x0F;   // Digital
+   *TRISB = 0x01;            // Pin B0 as input
+   INTCON2 -> INTEDG0 = 1;   // Rising edge
+   INTCON -> INT0IE = 1;     // INT0 ON
+   
+   // Global / peripheral enable
+   INTCON -> GIE = 1;      // Global
+   INTCON -> PEIE = 1;     // Peripheral
+   
+   while( 1 ) {
+   
+      // POT trigger
+      ADCON0 -> GODONE = 1; // Trigger
+      delay_ms( 250 );      // pause
+      
+      // Print VIN to LCD
+      printf(lcd_putc, "\f%f", vin);
+   }
+   
+}
+

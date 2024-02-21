@@ -1,0 +1,242 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A-01B TRISA
+01C-01D TRISB
+01E-01F TRISC
+020-021 TRISD
+022-023 TRISE
+024-025 LATA
+026-027 LATB
+028-029 LATC
+02A-02B LATD
+02C-02D LATE
+02E-02F PORTA
+030-031 PORTB
+032-033 PORTC
+034-035 PORTD
+036-037 PORTE
+038-039 ADCON0
+03A-03B ADCON1
+03C-03D ADCON2
+03E-03F Q
+040-041 ADRESH
+042-043 ADRESL
+044-045 INTCON
+046-047 INTCON3
+048-049 INTCON2
+04A-04B PIE1
+04C-04D PIE2
+04E-04F T1CON
+050-051 T2CON
+052-053 CCP1CON
+054-055 CCP2CON
+056-057 CCPR1
+058-059 CCPR1L
+05A-05B CCPR2
+05C-05D CCPR2L
+05E-05F PR2
+060-061 ECCP1AS
+062-063 TXSTA
+064-065 RCSTA
+066-067 BAUDCON
+068-069 SPBRG
+06A-06B TXREG
+06C-06D RCREG
+06E-071 vin
+072-075 t1c
+076-079 realRPM
+07A-07D expectedRPM
+07E     x
+07F-080 tstop
+081-082 tstart
+083-086 telapsed
+087-08A @DIVFF.P1
+087     @PSTRINGCN_846.P2
+087-08A @PRINTF_L32D_846FPFPF.P3
+087     lcd_init.i
+087-08A @FLT.P1
+087     MAIN.@SCRATCH1
+088     lcd_init.@SCRATCH1
+088     MAIN.@SCRATCH2
+088     @PSTRINGCN_846.@SCRATCH1
+089-08C @SFTOI.P1
+089     MAIN.@SCRATCH3
+089     @PSTRINGCN_846.@SCRATCH2
+08A     MAIN.@SCRATCH4
+08B-08E @DTOF.P1
+08B-08E @DIVFF.P2
+08B-08E @FLT.P3
+08B     @PRINTF_L32D_846FPFPF.P4
+08C     @PRINTF_L32D_846FPFPF.@SCRATCH1
+08D     @PRINTF_L32D_846FPFPF.@SCRATCH2
+08E     @PRINTF_L32D_846FPFPF.@SCRATCH3
+08F     @DIVFF.@SCRATCH1
+08F     @PRINTF_L32D_846FPFPF.@SCRATCH4
+08F     @FLT.@SCRATCH1
+090     @DIVFF.@SCRATCH2
+090     @PRINTF_L32D_846FPFPF.@SCRATCH5
+090     @FLT.@SCRATCH2
+091     @DIVFF.@SCRATCH3
+091     @PRINTF_L32D_846FPFPF.@SCRATCH6
+092     @DIVFF.@SCRATCH4
+092     @PRINTF_L32D_846FPFPF.@SCRATCH7
+093     @DIVFF.@SCRATCH5
+093     @PRINTF_L32D_846FPFPF.@SCRATCH8
+094-097 @FTOSD.P1
+094-097 @DIV3232.P2
+094     lcd_putc.c
+094     @DIVFF.@SCRATCH6
+095     @delay_ms1.P1
+095     lcd_gotoxy.x
+096     lcd_gotoxy.y
+097     lcd_gotoxy.address
+098-09B @DIV3232.P1
+098     lcd_gotoxy.@SCRATCH1
+098     @FTOSD.@SCRATCH1
+099     lcd_send_byte.address
+09A     lcd_send_byte.n
+09B     lcd_read_byte.low
+09B     lcd_send_byte.@SCRATCH1
+09C     lcd_send_nibble.n
+09C     lcd_read_byte.high
+09C     @DIV3232.@SCRATCH1
+09D     lcd_read_byte.@SCRATCH1
+09D     @DIV3232.@SCRATCH2
+09E     @DIV3232.@SCRATCH3
+09F     @DIV3232.@SCRATCH4
+0A0     @DIV3232.@SCRATCH5
+0A1-0A4 @MUL3232.P1
+0A1     int_ccp2_isr.@SCRATCH1
+0A1     int_ext0_isr.@SCRATCH1
+0A1     int_ad_isr.@SCRATCH1
+0A2     int_ccp2_isr.@SCRATCH2
+0A2     int_ext0_isr.@SCRATCH2
+0A2     int_ad_isr.@SCRATCH2
+0A3-0A4 @ITOF.P1
+0A3-0A6 @MULFF.P2
+0A3     int_ccp2_isr.@SCRATCH3
+0A3     int_ext0_isr.@SCRATCH3
+0A4     int_ccp2_isr.@SCRATCH4
+0A5-0A8 @MUL3232.P1
+0A7-0AA @MULFF.P1
+0A9     @MUL3232.@SCRATCH1
+0AA     @MUL3232.@SCRATCH2
+0AB     @MUL3232.@SCRATCH3
+0AB     @MULFF.@SCRATCH1
+0AC     @MUL3232.@SCRATCH4
+0AC     @MULFF.@SCRATCH2
+0AD     @MUL3232.@SCRATCH5
+0AD     @MULFF.@SCRATCH3
+0AE     @MUL3232.@SCRATCH6
+F83     lcd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000D2  LCD_INIT_STRING.call
+0000E2  LCD_INIT_STRING.data
+0000E6  int_timer1_isr
+0000EE  @MUL3232
+000142  int_ccp2_isr
+0001B0  int_ext0_isr
+0001D8  @ITOF
+000210  @MULFF
+000302  int_ad_isr
+000352  @const880.call
+00035C  @const891.call
+000368  @delay_ms1
+00038E  lcd_send_nibble
+0003AC  lcd_read_byte
+0003E8  lcd_send_byte
+00041E  lcd_init
+000458  @DTOF
+00048E  @DIVFF
+0005E8  lcd_gotoxy
+00060C  lcd_putc
+00064E  @PSTRINGCN_846
+00066C  @FTOSD
+0006AC  @DIV3232
+00073A  @PRINTF_L32D_846FPFPF
+0008BE  @SFTOI
+0008F8  @FLT
+00096E  @cinit1
+00096E  MAIN
+000AEA  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\Cruise Control\
+
+Project Files:
+    Cruise-Control.c                                        [05-Dec-23 13:56  CRC=E1686E5D]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [17-Apr-19 13:56  CRC=BB1FBD69]
+    ..\Library\myLibrary.h                                  [29-Nov-23 13:20  CRC=D0EC7287]
+    ..\Library\modifiedlcd.h                                [12-Sep-23 16:20  CRC=D13833BC]
+
+Source signature=0FE505C5
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=FE3A
+
+Units:
+    D:\Microcontrollers\Cruise Control\Cruise-Control (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Cruise-Control.xsym
+    Errors:      Cruise-Control.err
+    Ext Symbols: Cruise-Control.esym
+    INHX32:      Cruise-Control.hex
+    Symbols:     Cruise-Control.sym
+    List:        Cruise-Control.lst
+    Debug/COFF:  Cruise-Control.cof
+    Project:     Cruise-Control.ccspjt
+    Call Tree:   Cruise-Control.tre
+    Statistics:  Cruise-Control.STA

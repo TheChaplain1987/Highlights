@@ -1,0 +1,105 @@
+#include <18f4520.h>
+#use delay (clock = 20000000)
+#fuses HS, NOWDT, NOLVP
+#include "../Library/myLibrary.h"
+#include "../Library/modifiedlcd.h"
+
+// Global variables
+float vin = 0.0;
+float t1c = 4 * 1 / 20000000.0;
+float realRPM, expectedRPM;
+unsigned int x = 0;
+unsigned int16 tstop, tstart;
+unsigned int32 telapsed;
+
+// Timer for capture
+#INT_TIMER1
+void int_timer1_isr() {
+   x++;
+}
+
+// Capture ISR (CCP2 on C1)
+#INT_CCP2
+void int_ccp2_isr() {
+   tstop = *CCPR2;
+   telapsed = x * 0x10000 -tstart + tstop;
+   x = 0;
+   tstart = tstop;
+}
+
+// Stop button ISR (B0)
+#INT_EXT
+void int_ext0_isr() {
+   output_toggle(PIN_B7);
+}
+
+// POT ISR (A to D) (A0)
+#INT_AD
+void int_ad_isr() {
+   vin = *Q * ( 5.0 / 1023.0 );
+}
+
+main() {
+   
+   // Initialize LCD
+   lcd_init();
+   
+   // Setup capture for CCP2 (C1)
+   *TRISC |= 0x2;             // C1 is input
+   CCP2CON -> CCPxMx = 0x4;  // Capture every falling edge
+   PIE2 -> CCP2IE = 1;       // CCP2 interrupt is ON
+   
+   // Setup timer1
+   T1CON -> TMR1ON = 1;      // Timer1 is ON
+   T1CON -> TMR1CS = 0;      // Fosc / 4
+   T1CON -> T1CKPSx = 0;     // PS = 1;
+   PIE1 -> TMR1IE = 1;      // Timer1 overflow interrupt is ON
+   
+   // Setup PWM
+   *TRISC |= 0x00;
+   CCP1CON -> CCPxMx = 0xC;
+   *PR2 = 100;
+   *CCPR1L = 100;
+   T2CON -> TMR2ON = 1;
+   
+   // Setup A to D (A0)
+   *TRISA = 0x01;            // CH0 Input
+   // ADCON1 -> PCFGx setup in stop button
+   ADCON0 -> ADON = 1;       // A/D ON
+   ADCON0 -> CHSx = 0;       // Channel Selector 0
+   ADCON1 -> VCFG0 = 0;      // Max ref default
+   ADCON1 -> VCFG1 = 0;      // Min ref default
+   ADCON2 -> ADFM = 1;       // Right justify LCD
+   ADCON2 -> ACQTx = 5;      // 12 T AD
+   ADCON2 -> ADCSx = 5;      // Fosc / 16
+   PIE1 -> ADIE = 1;
+   
+   
+   // Setup stop button on B0
+   ADCON1 -> PCFGx = 0x0F;   // Digital
+   *TRISB = 0x01;            // Pin B0 as input
+   INTCON2 -> INTEDG0 = 1;   // Rising edge
+   INTCON -> INT0IE = 1;     // INT0 ON
+   
+   // Global / peripheral enable
+   INTCON -> GIE = 1;        // Global
+   INTCON -> PEIE = 1;       // Peripheral
+   
+   while( 1 ) {
+   
+      // POT trigger
+      ADCON0 -> GODONE = 1;  // Trigger
+      delay_ms( 250 );       // pause
+      
+      // Calculate RPMs
+      realRPM = 60 / ( 161 * telapsed * t1c );
+      expectedRPM = ( vin / 5.0  ) * 126;
+      
+      // Print VIN to LCD
+      printf(lcd_putc, "\fRPM = %f", realRPM);
+      printf(lcd_putc,"\nERPM = %f", expectedRPM);
+      delay_ms( 100 );
+   }
+   
+}
+

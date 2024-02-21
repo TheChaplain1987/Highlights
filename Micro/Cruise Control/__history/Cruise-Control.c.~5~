@@ -1,0 +1,31 @@
+#include <18f4520.h>
+#use delay (clock = 20000000)
+#fuses HS, NOWDT, NOLVP
+#include "../Library/myLibrary.h"
+#include "../Library/modifiedlcd.h"
+
+// Stop button ISR (B0)
+#INT_EXT
+void int_ext0_isr() {
+   LATC ^= 0x01;
+}
+
+main() {
+
+   TRISC = 0x01;
+   
+   // Setup stop button on B0
+   *ADCON1 |= 0x0F;        // Digital
+   *TRISB = 0x01;          // Pin B0 as input
+   INTCON2 -> INTEDG0 = 1; // Rising edge
+   INTCON -> INT0 = 1;     // External inerrupt
+   
+   // Global / peripheral enable
+   INTCON -> GIE = 1;      // Global
+   INTCON -> PEIE = 1;     // Peripheral
+   
+   while( 1 ) {
+   }
+   
+}
+
