@@ -1,0 +1,45 @@
+
+ROM used:   222/16384 (1%)
+            222/16384 (1%) including unused fragments
+
+            0.3 Average locations per line
+            14.8 Average locations per statement
+
+RAM used:   11/1536 (1%) at main() level
+            12/1536 (1%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   35    15 100  Chaser.c
+  824     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+----- -----
+  859    15 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   9    1             @delay_ms1
+0    180  41    3   441  6.6  main
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              15
+    Comments                148
+    Volume (V)              446
+    Difficulty (D)          6.2
+    Effort to implement (E) 2774
+    Time to implement (T)   3 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   2
+    Maintainability (MI)    95
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   218  32546  
+
+
+

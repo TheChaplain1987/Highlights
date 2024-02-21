@@ -1,0 +1,21 @@
+#include <18f4520.h>
+#use delay ( clock = 20000000 ) // 20MHz
+#fuses HS, NOWDT, NOLVP
+
+int *PORTC = 0xF82;
+int *TRISC = 0xF94;
+
+main() {
+
+   *TRISC |= 0x00;
+   
+   int mask = 0x01;
+
+   while( 1 ) {
+      for( mask = 0x01, mask <= 0x10, mask >> 1 ) {
+         *PORTC |= mask;
+         delay_ms( 500 );
+      }
+   }
+}
+

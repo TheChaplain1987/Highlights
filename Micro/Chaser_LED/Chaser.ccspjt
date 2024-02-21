@@ -1,0 +1,16 @@
+[PROJECT]
+Target=Chaser.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=Chaser.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Chaser.c]
+Type=4
+[mru-list]
+1=Chaser.c
+[Units]
+Count=1
+1=Chaser (main)

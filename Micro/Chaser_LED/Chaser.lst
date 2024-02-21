@@ -1,0 +1,158 @@
+CCS PCH C Compiler, Version 5.008, 5967               02-Sep-23 23:20
+
+               Filename:   D:\Microcontrollers\Chaser_LED\Chaser.lst
+
+               ROM used:   222 bytes (1%)
+                           Largest free fragment is 32546
+               RAM used:   11 (1%) at main() level
+                           12 (1%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0000:  GOTO   002A
+.................... // Program to make a chaser LED for PIC18F4520 
+....................  
+.................... #include <18f4520.h> 
+.................... //////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay ( clock = 20000000 ) // 20MHz 
+0004:  CLRF   FEA
+0006:  MOVLW  0A
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BZ    0028
+000E:  MOVLW  06
+0010:  MOVWF  01
+0012:  CLRF   00
+0014:  DECFSZ 00,F
+0016:  BRA    0014
+0018:  DECFSZ 01,F
+001A:  BRA    0012
+001C:  MOVLW  7B
+001E:  MOVWF  00
+0020:  DECFSZ 00,F
+0022:  BRA    0020
+0024:  DECFSZ FEF,F
+0026:  BRA    000E
+0028:  RETURN 0
+.................... #fuses HS, NOWDT, NOLVP 
+....................  
+.................... int *TRISC = 0xF94;  // Connect registers 
+.................... int *PORTC = 0xF82; 
+....................  
+.................... main() { 
+002A:  CLRF   FF8
+002C:  BCF    FD0.7
+002E:  MOVLW  0F
+0030:  MOVWF  05
+0032:  MOVLW  94
+0034:  MOVWF  04
+0036:  MOVLW  0F
+0038:  MOVWF  07
+003A:  MOVLW  82
+003C:  MOVWF  06
+003E:  MOVF   FC1,W
+0040:  ANDLW  C0
+0042:  IORLW  0F
+0044:  MOVWF  FC1
+0046:  MOVLW  07
+0048:  MOVWF  FB4
+....................     
+....................    *TRISC = 0x00;    // Set all of PORTC as OUTPUT 
+004A:  MOVFF  04,FE9
+004E:  MOVFF  05,FEA
+0052:  CLRF   FEF
+....................    *PORTC = 0x00;    // Set all of PORTC to 0V 
+0054:  MOVFF  06,FE9
+0058:  MOVFF  07,FEA
+005C:  CLRF   FEF
+....................     
+....................    int mask = 0x01;  // Mask for shifting bits 
+005E:  MOVLW  01
+0060:  MOVWF  08
+....................  
+....................    while( 1 ) { 
+....................     
+....................       // LEDs moving forward 
+....................       for( mask = 0x01; mask <= 0x10; mask <<= 1 ) { 
+0062:  MOVLW  01
+0064:  MOVWF  08
+0066:  MOVF   08,W
+0068:  SUBLW  10
+006A:  BNC   009E
+....................          *PORTC |= mask; 
+006C:  MOVFF  06,FE9
+0070:  MOVFF  07,FEA
+0074:  MOVF   FEF,W
+0076:  IORWF  08,W
+0078:  MOVWF  FEF
+....................          delay_ms( 1000 ); 
+007A:  MOVLW  04
+007C:  MOVWF  09
+007E:  MOVLW  FA
+0080:  MOVWF  0A
+0082:  RCALL  0004
+0084:  DECFSZ 09,F
+0086:  BRA    007E
+....................          *PORTC &= ~mask; 
+0088:  MOVFF  06,FE9
+008C:  MOVFF  07,FEA
+0090:  MOVF   08,W
+0092:  XORLW  FF
+0094:  ANDWF  FEF,W
+0096:  MOVWF  FEF
+0098:  BCF    FD8.0
+009A:  RLCF   08,F
+009C:  BRA    0066
+....................       } 
+....................        
+....................       // LEDs moving reverse 
+....................       for( mask = 0x08; mask >= 0x02; mask >>= 1 ) { 
+009E:  MOVLW  08
+00A0:  MOVWF  08
+00A2:  MOVF   08,W
+00A4:  SUBLW  01
+00A6:  BC    00DA
+....................          *PORTC |= mask; 
+00A8:  MOVFF  06,FE9
+00AC:  MOVFF  07,FEA
+00B0:  MOVF   FEF,W
+00B2:  IORWF  08,W
+00B4:  MOVWF  FEF
+....................          delay_ms( 1000 ); 
+00B6:  MOVLW  04
+00B8:  MOVWF  09
+00BA:  MOVLW  FA
+00BC:  MOVWF  0A
+00BE:  RCALL  0004
+00C0:  DECFSZ 09,F
+00C2:  BRA    00BA
+....................          *PORTC &= ~mask; 
+00C4:  MOVFF  06,FE9
+00C8:  MOVFF  07,FEA
+00CC:  MOVF   08,W
+00CE:  XORLW  FF
+00D0:  ANDWF  FEF,W
+00D2:  MOVWF  FEF
+00D4:  BCF    FD8.0
+00D6:  RRCF   08,F
+00D8:  BRA    00A2
+....................       } 
+00DA:  BRA    0062
+....................    } 
+.................... } 
+....................  
+00DC:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
