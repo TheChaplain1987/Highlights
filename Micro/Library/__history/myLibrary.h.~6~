@@ -1,0 +1,39 @@
+// A library for the PIC18F4520
+
+int *TRISA = 0xF92; // Connect to TRISx
+int *TRISB = 0xF93;
+int *TRISC = 0xF94;
+int *TRISD = 0xF95;
+int *TRISE = 0xF96;
+
+int *LATA = 0xF89;  // Connect to LATx
+int *LATB = 0xF8A;
+int *LATC = 0xF8B;
+int *LATD = 0xF8C;
+int *LATE = 0xF8D;
+
+int *PORTA = 0xF80; // Connect to LATx
+int *PORTB = 0xF81;
+int *PORTC = 0xF82;
+int *PORTD = 0xF83;
+int *PORTE = 0xF84;
+
+struct _adcon1 {   // Analog vs digital
+   int PCFGx:4;
+   int VCFG0:1;
+   int VCFG1:1;
+   int unused:2;
+};
+struct _adcon1 *ADCON1 = 0xFC1;
+
+struct _intcon2 {  // Interrupts
+   int RBIP:1;
+   int unused:1;
+   int TMR0IP:1;
+   int notused:1;
+   int INTEDG2:1;
+   int INTEDG1:1;
+   int INTEDG0:1;
+   int RBPU:1;
+};
+struct _intcon2 *INTCON2 = 0xFF1;
