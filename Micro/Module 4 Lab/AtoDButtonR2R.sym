@@ -1,0 +1,165 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019-01A TRISA
+01B-01C TRISB
+01D-01E TRISC
+01F-020 TRISD
+021-022 TRISE
+023-024 LATA
+025-026 LATB
+027-028 LATC
+029-02A LATD
+02B-02C LATE
+02D-02E PORTA
+02F-030 PORTB
+031-032 PORTC
+033-034 PORTD
+035-036 PORTE
+037-038 ADCON0
+039-03A ADCON1
+03B-03C ADCON2
+03D-03E Q
+03F-040 ADRESH
+041-042 ADRESL
+043-044 INTCON
+045-046 INTCON3
+047-048 INTCON2
+049-04A PIE1
+04B-04C T1CON
+04D-050 Vin
+051-052 @sprintf_string
+053     lcd_init.i
+053-056 @FLT.P1
+053     MAIN.@SCRATCH1
+053     @PSTRINGC_780.@SCRATCH1
+054     lcd_init.@SCRATCH1
+054     MAIN.@SCRATCH2
+054     @PSTRINGC_780.@SCRATCH2
+055     lcd_putc.c
+056     @delay_ms1.P1
+056     lcd_gotoxy.x
+057     lcd_gotoxy.y
+057-05A @FLT.P1
+058     lcd_gotoxy.address
+059     lcd_gotoxy.@SCRATCH1
+05A     lcd_send_byte.address
+05B     lcd_send_byte.n
+05B     @FLT.@SCRATCH1
+05C     lcd_read_byte.low
+05C     lcd_send_byte.@SCRATCH1
+05C     @FLT.@SCRATCH2
+05D     lcd_send_nibble.n
+05D     lcd_read_byte.high
+05E     lcd_read_byte.@SCRATCH1
+05F     int_ad_isr.@SCRATCH1
+060     int_ad_isr.@SCRATCH2
+061-064 @MULFF.P1
+061-062 @ITOF.P2
+065-068 @MULFF.P1
+069     @MULFF.@SCRATCH1
+06A     @MULFF.@SCRATCH2
+06B     @MULFF.@SCRATCH3
+F83     lcd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  LCD_INIT_STRING.call
+0000BE  LCD_INIT_STRING.data
+0000C2  @ITOF
+0000FA  @MULFF
+0001EE  int_ad_isr
+00023E  @const799.call
+000244  @const804.call
+00024A  @const805.call
+000250  @const806.call
+000256  @const807.call
+000268  @delay_ms1
+00028E  lcd_send_nibble
+0002AC  lcd_read_byte
+0002E8  lcd_send_byte
+00031E  lcd_init
+000358  @FLT
+0003CE  lcd_gotoxy
+0003F2  lcd_putc
+000436  @PSTRINGC_780
+000456  @cinit1
+000456  MAIN
+000544  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\AtoD\Module 4 Lab\
+
+Project Files:
+    AtoDButtonR2R.c                                         [11-Oct-23 13:15  CRC=633AF154]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [17-Apr-19 14:56  CRC=BB1FBD69]
+    ..\..\Library\myLibrary.h                               [18-Oct-23 12:42  CRC=41AAEC28]
+    ..\..\Library\modifiedlcd.h                             [12-Sep-23 16:20  CRC=D13833BC]
+
+Source signature=0276025D
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=B241
+
+Units:
+    D:\Microcontrollers\AtoD\Module 4 Lab\AtoDButtonR2R (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   AtoDButtonR2R.xsym
+    Errors:      AtoDButtonR2R.err
+    Ext Symbols: AtoDButtonR2R.esym
+    INHX32:      AtoDButtonR2R.hex
+    Symbols:     AtoDButtonR2R.sym
+    List:        AtoDButtonR2R.lst
+    Debug/COFF:  AtoDButtonR2R.cof
+    Project:     AtoDButtonR2R.ccspjt
+    Call Tree:   AtoDButtonR2R.tre
+    Statistics:  AtoDButtonR2R.STA

@@ -1,0 +1,69 @@
+[PROJECT]
+Target=AtoDButtonR2R.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=AtoDButtonR2R.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;D:\Microcontrollers\Library\
+[AtoDButtonR2R.c]
+Type=4
+[mru-list]
+1=AtoDButtonR2R.c
+[Opened Files]
+1=AtoDButtonR2R.c
+2=..\..\Library\myLibrary.h
+3=..\..\Library\modifiedlcd.h
+4=..\AtoDinterrupt.c
+t1=1
+t2=1
+t3=1
+t4=1
+Count=5
+5=..\..\Exam\BenchExam.c
+t5=1
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=6
+D1=11-10-2023
+D1_L=2
+D1_L1=[47748]Project Opened.
+D1_L2=[49410]Project Closed.
+D2=18-10-2023
+D2_L=5
+D2_L1=[44529]Project Opened.
+D2_L2=[44945]Started Editing.
+D2_L3=[45477]Project Closed.
+D2_L4=[50427]Project Opened.
+D2_L5=[51657]Project Closed.
+D3=24-10-2023
+D3_L=7
+D3_L1=[49271]Project Opened.
+D3_L2=[49389]Started Editing.
+D3_L3=[49457]Project Closed.
+D3_L4=[49797]Project Opened.
+D3_L5=[49798]Project Closed.
+D3_L6=[49885]Project Opened.
+D3_L7=[49913]Project Closed.
+D4=25-10-2023
+D4_L=2
+D4_L1=[48893]Project Opened.
+D4_L2=[48894]Project Closed.
+D5=31-10-2023
+D5_L=2
+D5_L1=[49515]Project Opened.
+D5_L2=[49515]Project Closed.
+D6=01-11-2023
+D6_L=2
+D6_L1=[48958]Project Opened.
+D6_L2=[49108]Project Closed.
+
+[defines]
+buildcount=3
+[Units]
+Count=1
+1=AtoDButtonR2R (main)

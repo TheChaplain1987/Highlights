@@ -1,0 +1,66 @@
+
+ROM used:   1846/32768 (6%)
+            1846/32768 (6%) including unused fragments
+
+            1.5 Average locations per line
+            19.8 Average locations per statement
+
+RAM used:   85/1536 (6%) at main() level
+            108/1536 (7%) worst case
+
+Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   56    32  34  AtoDButtonR2R.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+  108     0   0  ..\..\Library\myLibrary.h
+  185    61  66  ..\..\Library\modifiedlcd.h
+----- -----
+ 1205    93 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   1    1             @delay_ms1
+0     20   1    0             @const760
+0     60   2    3    463  4.3  lcd_read_byte
+0     30   1    1    134  2.2  lcd_send_nibble
+0     54   1    3    317  4.3  lcd_send_byte
+0     58   2    2    319  4.7  lcd_init
+0     36   1    4    186  5.5  lcd_gotoxy
+0     68   2    1    272  4.1  lcd_putc
+0     80   2    2     44  1.7  int_ad_isr
+0     56   2    2             @ITOF
+0    244   7   11             @MULFF
+0    740  20    2   1071  6.2  MAIN
+0    118   3   10             @FLT
+0      6   0    0             @const799
+0     32   1    2             @PSTRINGC_780
+0      6   0    0             @const804
+0      6   0    0             @const805
+0      6   0    0             @const806
+0     18   0    0             @const807
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               8
+    Statements              93
+    Comments                241
+    Volume (V)              4193
+    Difficulty (D)          32.0
+    Effort to implement (E) 134382
+    Time to implement (T)   2 hours, 4 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   10
+    Maintainability (MI)    138
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE  1676  30918  
+
+
+
