@@ -1,0 +1,323 @@
+CCS PCH C Compiler, Version 5.085, 47635               10-Oct-23 14:11
+
+               Filename:   D:\Microcontrollers\4x4 Matrix\4x4_Matrix_Lab_LATC.lst
+
+               ROM used:   514 bytes (2%)
+                           Largest free fragment is 32254
+               RAM used:   11 (1%) at main() level
+                           11 (1%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0000:  GOTO   002E
+.................... // Program to control a 4x4 LED matrix 
+....................  
+.................... #include <18f4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay( clock = 20000000 )  // Set clock to 20MHz 
+0004:  CLRF   FEA
+0006:  MOVLW  0A
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BTFSC  FD8.2
+000E:  GOTO   002C
+0012:  MOVLW  06
+0014:  MOVWF  01
+0016:  CLRF   00
+0018:  DECFSZ 00,F
+001A:  BRA    0018
+001C:  DECFSZ 01,F
+001E:  BRA    0016
+0020:  MOVLW  7B
+0022:  MOVWF  00
+0024:  DECFSZ 00,F
+0026:  BRA    0024
+0028:  DECFSZ FEF,F
+002A:  BRA    0012
+002C:  RETURN 0
+.................... #fuses HS, NOWDT, NOLVP 
+....................  
+.................... struct myMatrix { 
+....................    int ROW:4; 
+....................    int COL:4; 
+.................... }; 
+....................  
+.................... struct myMatrix *LATC = 0xF8B; 
+.................... int *TRISC = 0xF94; 
+....................  
+.................... int main( void ) { 
+002E:  CLRF   FF8
+0030:  BCF    FD0.7
+0032:  MOVLW  0F
+0034:  MOVWF  05
+0036:  MOVLW  8B
+0038:  MOVWF  04
+003A:  MOVLW  0F
+003C:  MOVWF  07
+003E:  MOVLW  94
+0040:  MOVWF  06
+0042:  MOVF   FC1,W
+0044:  ANDLW  C0
+0046:  IORLW  0F
+0048:  MOVWF  FC1
+004A:  MOVLW  07
+004C:  MOVWF  FB4
+....................  
+....................    *TRISC = 0x00;   // Make all of port C OUTPUT 
+004E:  MOVFF  06,FE9
+0052:  MOVFF  07,FEA
+0056:  CLRF   FEF
+....................    *LATC = 0x00; 
+0058:  MOVFF  04,FE9
+005C:  MOVFF  05,FEA
+0060:  CLRF   FEF
+....................     
+....................    int mask = 0x01; // Mask for shifting bits 
+0062:  MOVLW  01
+0064:  MOVWF  08
+....................     
+....................    while( 1 ) { 
+....................        
+....................       // Chaser COL 
+....................       for( mask = 0x01; mask <= 0x08; mask <<= 1 ) { 
+0066:  MOVLW  01
+0068:  MOVWF  08
+006A:  MOVF   08,W
+006C:  SUBLW  08
+006E:  BNC   00AA
+....................          LATC -> ROW = 0xF; 
+0070:  MOVFF  04,FE9
+0074:  MOVFF  05,FEA
+0078:  MOVLW  F0
+007A:  ANDWF  FEF,W
+007C:  IORLW  0F
+007E:  MOVWF  FEF
+....................          LATC -> COL = mask; 
+0080:  MOVFF  04,FE9
+0084:  MOVFF  05,FEA
+0088:  SWAPF  08,W
+008A:  ANDLW  F0
+008C:  MOVWF  00
+008E:  MOVLW  0F
+0090:  ANDWF  FEF,W
+0092:  IORWF  00,W
+0094:  MOVWF  FEF
+....................          delay_ms( 500 ); 
+0096:  MOVLW  02
+0098:  MOVWF  09
+009A:  MOVLW  FA
+009C:  MOVWF  0A
+009E:  RCALL  0004
+00A0:  DECFSZ 09,F
+00A2:  BRA    009A
+00A4:  BCF    FD8.0
+00A6:  RLCF   08,F
+00A8:  BRA    006A
+....................       } 
+....................        
+....................       // Chaser ROW 
+....................       for( mask = 0x01; mask <= 0x08; mask <<= 1 ) { 
+00AA:  MOVLW  01
+00AC:  MOVWF  08
+00AE:  MOVF   08,W
+00B0:  SUBLW  08
+00B2:  BNC   00EE
+....................          LATC -> ROW = mask; 
+00B4:  MOVFF  04,FE9
+00B8:  MOVFF  05,FEA
+00BC:  MOVF   08,W
+00BE:  ANDLW  0F
+00C0:  MOVWF  00
+00C2:  MOVLW  F0
+00C4:  ANDWF  FEF,W
+00C6:  IORWF  00,W
+00C8:  MOVWF  FEF
+....................          LATC -> COL = 0xF; 
+00CA:  MOVFF  04,FE9
+00CE:  MOVFF  05,FEA
+00D2:  MOVLW  0F
+00D4:  ANDWF  FEF,W
+00D6:  IORLW  F0
+00D8:  MOVWF  FEF
+....................          delay_ms( 500 ); 
+00DA:  MOVLW  02
+00DC:  MOVWF  09
+00DE:  MOVLW  FA
+00E0:  MOVWF  0A
+00E2:  RCALL  0004
+00E4:  DECFSZ 09,F
+00E6:  BRA    00DE
+00E8:  BCF    FD8.0
+00EA:  RLCF   08,F
+00EC:  BRA    00AE
+....................       } 
+....................        
+....................       // Snake 
+....................       for( mask = 0x01; mask <= 0x08; mask <<= 1 ) { 
+00EE:  MOVLW  01
+00F0:  MOVWF  08
+00F2:  MOVF   08,W
+00F4:  SUBLW  08
+00F6:  BNC   0132
+....................          LATC -> ROW = 0x01; 
+00F8:  MOVFF  04,FE9
+00FC:  MOVFF  05,FEA
+0100:  MOVLW  F0
+0102:  ANDWF  FEF,W
+0104:  IORLW  01
+0106:  MOVWF  FEF
+....................          LATC -> COL = mask; 
+0108:  MOVFF  04,FE9
+010C:  MOVFF  05,FEA
+0110:  SWAPF  08,W
+0112:  ANDLW  F0
+0114:  MOVWF  00
+0116:  MOVLW  0F
+0118:  ANDWF  FEF,W
+011A:  IORWF  00,W
+011C:  MOVWF  FEF
+....................          delay_ms( 500 ); 
+011E:  MOVLW  02
+0120:  MOVWF  09
+0122:  MOVLW  FA
+0124:  MOVWF  0A
+0126:  RCALL  0004
+0128:  DECFSZ 09,F
+012A:  BRA    0122
+012C:  BCF    FD8.0
+012E:  RLCF   08,F
+0130:  BRA    00F2
+....................       } 
+....................       for( mask = 0x08; mask >= 0x01; mask >>= 1 ) { 
+0132:  MOVLW  08
+0134:  MOVWF  08
+0136:  MOVF   08,W
+0138:  SUBLW  00
+013A:  BC    0176
+....................          LATC -> ROW = 0x02; 
+013C:  MOVFF  04,FE9
+0140:  MOVFF  05,FEA
+0144:  MOVLW  F0
+0146:  ANDWF  FEF,W
+0148:  IORLW  02
+014A:  MOVWF  FEF
+....................          LATC -> COL = mask; 
+014C:  MOVFF  04,FE9
+0150:  MOVFF  05,FEA
+0154:  SWAPF  08,W
+0156:  ANDLW  F0
+0158:  MOVWF  00
+015A:  MOVLW  0F
+015C:  ANDWF  FEF,W
+015E:  IORWF  00,W
+0160:  MOVWF  FEF
+....................          delay_ms( 500 ); 
+0162:  MOVLW  02
+0164:  MOVWF  09
+0166:  MOVLW  FA
+0168:  MOVWF  0A
+016A:  RCALL  0004
+016C:  DECFSZ 09,F
+016E:  BRA    0166
+0170:  BCF    FD8.0
+0172:  RRCF   08,F
+0174:  BRA    0136
+....................       } 
+....................       for( mask = 0x01; mask <= 0x08; mask <<= 1 ) { 
+0176:  MOVLW  01
+0178:  MOVWF  08
+017A:  MOVF   08,W
+017C:  SUBLW  08
+017E:  BNC   01BA
+....................          LATC -> ROW = 0x04; 
+0180:  MOVFF  04,FE9
+0184:  MOVFF  05,FEA
+0188:  MOVLW  F0
+018A:  ANDWF  FEF,W
+018C:  IORLW  04
+018E:  MOVWF  FEF
+....................          LATC -> COL = mask; 
+0190:  MOVFF  04,FE9
+0194:  MOVFF  05,FEA
+0198:  SWAPF  08,W
+019A:  ANDLW  F0
+019C:  MOVWF  00
+019E:  MOVLW  0F
+01A0:  ANDWF  FEF,W
+01A2:  IORWF  00,W
+01A4:  MOVWF  FEF
+....................          delay_ms( 500 ); 
+01A6:  MOVLW  02
+01A8:  MOVWF  09
+01AA:  MOVLW  FA
+01AC:  MOVWF  0A
+01AE:  RCALL  0004
+01B0:  DECFSZ 09,F
+01B2:  BRA    01AA
+01B4:  BCF    FD8.0
+01B6:  RLCF   08,F
+01B8:  BRA    017A
+....................       } 
+....................       for( mask = 0x08; mask >= 0x01; mask >>= 1 ) { 
+01BA:  MOVLW  08
+01BC:  MOVWF  08
+01BE:  MOVF   08,W
+01C0:  SUBLW  00
+01C2:  BC    01FE
+....................          LATC -> ROW = 0x08; 
+01C4:  MOVFF  04,FE9
+01C8:  MOVFF  05,FEA
+01CC:  MOVLW  F0
+01CE:  ANDWF  FEF,W
+01D0:  IORLW  08
+01D2:  MOVWF  FEF
+....................          LATC -> COL = mask; 
+01D4:  MOVFF  04,FE9
+01D8:  MOVFF  05,FEA
+01DC:  SWAPF  08,W
+01DE:  ANDLW  F0
+01E0:  MOVWF  00
+01E2:  MOVLW  0F
+01E4:  ANDWF  FEF,W
+01E6:  IORWF  00,W
+01E8:  MOVWF  FEF
+....................          delay_ms( 500 ); 
+01EA:  MOVLW  02
+01EC:  MOVWF  09
+01EE:  MOVLW  FA
+01F0:  MOVWF  0A
+01F2:  RCALL  0004
+01F4:  DECFSZ 09,F
+01F6:  BRA    01EE
+01F8:  BCF    FD8.0
+01FA:  RRCF   08,F
+01FC:  BRA    01BE
+....................       } 
+01FE:  BRA    0066
+....................    } 
+.................... } 
+....................  
+0200:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

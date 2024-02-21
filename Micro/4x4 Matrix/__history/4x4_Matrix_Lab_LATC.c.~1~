@@ -1,0 +1,61 @@
+// Program to control a 4x4 LED matrix
+
+#include <18f4520.h>
+#use delay( clock = 20000000 )  // Set clock to 20MHz
+#fuses HS, NOWDT, NOLVP
+
+struct myMatrix {
+   int ROW:4;
+   int COL:4;
+};
+
+struct myMatrix *LATC = 0xF8B;
+int *TRISC = 0xF94;
+
+int main( void ) {
+
+   *TRISC = 0x00;   // Make all of port C OUTPUT
+   *LATC = 0x00;
+   
+   int mask = 0x01; // Mask for shifting bits
+   
+   while( 1 ) {
+      
+      // Chaser COL
+      for( mask = 0x01; mask <= 0x08; mask <<= 1 ) {
+         LATC -> ROW = 0xFF;
+         LATC -> COL = mask;
+         delay_ms( 500 );
+      }
+      
+      // Chaser ROW
+      for( mask = 0x01; mask <= 0x08; mask <<= 1 ) {
+         LATC -> ROW = mask;
+         LATC -> COL = 0xFF;
+         delay_ms( 500 );
+      }
+      
+      // Snake
+      for( mask = 0x01; mask <= 0x80; mask <<= 1 ) {
+         LATC -> ROW = 0x01;
+         LATC -> COL = mask;
+         delay_ms( 500 );
+      }
+      for( mask = 0x08; mask >= 0x01; mask >>= 1 ) {
+         LATC -> ROW = 0x02;
+         LATC -> COL = mask;
+         delay_ms( 500 );
+      }
+      for( mask = 0x01; mask <= 0x80; mask <<= 1 ) {
+         LATC -> ROW = 0x04;
+         LATC -> COL = mask;
+         delay_ms( 500 );
+      }
+      for( mask = 0x08; mask >= 0x01; mask >>= 1 ) {
+         LATC -> ROW = 0x08;
+         LATC -> COL = mask;
+         delay_ms( 500 );
+      }
+   }
+}
+

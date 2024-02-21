@@ -1,0 +1,45 @@
+
+ROM used:   514/32768 (2%)
+            514/32768 (2%) including unused fragments
+
+            0.6 Average locations per line
+            14.7 Average locations per statement
+
+RAM used:   11/1536 (1%) at main() level
+            11/1536 (1%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   62    35 100  4x4_Matrix_Lab_LATC.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+----- -----
+  918    35 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     42   4    1             @delay_ms1
+0    468  46    3   1362  5.9  main
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              35
+    Comments                159
+    Volume (V)              1367
+    Difficulty (D)          5.8
+    Effort to implement (E) 7865
+    Time to implement (T)   7 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   6
+    Maintainability (MI)    106
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   510  32254  
+
+
+
