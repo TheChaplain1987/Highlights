@@ -1,0 +1,81 @@
+CCS PCH C Compiler, Version 5.008, 5967               02-Sep-23 22:38
+
+               Filename:   D:\Microcontrollers\Blink_LED\blink_led.lst
+
+               ROM used:   86 bytes (0%)
+                           Largest free fragment is 32682
+               RAM used:   5 (0%) at main() level
+                           6 (0%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0000:  GOTO   002C
+.................... #include <18f4520.h> 
+.................... //////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay ( clock = 20000000 ) // 20MHz 
+0004:  CLRF   FEA
+0006:  MOVLW  06
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BZ    0028
+000E:  MOVLW  06
+0010:  MOVWF  01
+0012:  CLRF   00
+0014:  DECFSZ 00,F
+0016:  BRA    0014
+0018:  DECFSZ 01,F
+001A:  BRA    0012
+001C:  MOVLW  7B
+001E:  MOVWF  00
+0020:  DECFSZ 00,F
+0022:  BRA    0020
+0024:  DECFSZ FEF,F
+0026:  BRA    000E
+0028:  GOTO   004E (RETURN)
+.................... #fuses HS, NOWDT, NOLVP 
+....................  
+.................... main() { 
+002C:  CLRF   FF8
+002E:  BCF    FD0.7
+0030:  MOVF   FC1,W
+0032:  ANDLW  C0
+0034:  IORLW  0F
+0036:  MOVWF  FC1
+0038:  MOVLW  07
+003A:  MOVWF  FB4
+....................     
+....................    set_tris_c( 0x00 ); 
+003C:  MOVLW  00
+003E:  MOVWF  F94
+....................     
+....................    while( 1 ) { 
+....................       output_toggle( PIN_C0 ); 
+0040:  BCF    F94.0
+0042:  BTG    F8B.0
+....................       delay_ms( 500 ); 
+0044:  MOVLW  02
+0046:  MOVWF  05
+0048:  MOVLW  FA
+004A:  MOVWF  06
+004C:  BRA    0004
+004E:  DECFSZ 05,F
+0050:  BRA    0048
+0052:  BRA    0040
+....................        
+....................    } 
+.................... } 
+0054:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

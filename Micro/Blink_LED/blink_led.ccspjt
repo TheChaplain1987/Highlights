@@ -1,0 +1,43 @@
+[PROJECT]
+Target=blink_led.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=blink_led.c
+[blink_led.c]
+Type=4
+[mru-list]
+1=blink_led.c
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=3
+D1=30-08-2023
+D1_L=3
+D1_L1=[47065]Stopped Editing.
+D1_L2=[47556]Started Editing.
+D1_L3=[47763]Project Closed.
+D2=05-09-2023
+D2_L=2
+D2_L1=[53976]Project Opened.
+D2_L2=[53976]Project Closed.
+D3=13-09-2023
+D3_L=2
+D3_L1=[45885]Project Opened.
+D3_L2=[45885]Project Closed.
+[Opened Files]
+1=blink_led.c
+2=input_software.c
+3=C:\Users\Thech\Desktop\Chaser.c
+4=
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Units]
+Count=1
+1=blink_led (main)
+
+[fileformats]
+forcecoff=0

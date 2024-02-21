@@ -1,0 +1,4 @@
+ÀÄblink_led
+   ÀÄmain  0/42  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÀÄ@delay_ms1  0/40  Ram=1

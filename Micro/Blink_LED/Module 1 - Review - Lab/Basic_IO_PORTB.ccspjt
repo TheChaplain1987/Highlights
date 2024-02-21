@@ -1,0 +1,24 @@
+[PROJECT]
+Target=Basic_IO_PORTB.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=Basic_IO_PORTB.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Basic_IO_PORTB.c]
+Type=4
+[mru-list]
+1=Basic_IO_PORTB.c
+[Opened Files]
+1=C:\Users\Thech\Desktop\Chaser.c
+2=C:\Users\Thech\Desktop\4x4_Matrix\4x4_Matrix_Lab_LATC.c
+3=..\blink_led.c
+4=Basic_Output_PORTC.c
+5=Basic_IO_PORTB.c
+6=..\input_software.c
+7=
+[Units]
+Count=1
+1=Basic_IO_PORTB (main)

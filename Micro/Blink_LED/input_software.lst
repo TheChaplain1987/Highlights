@@ -1,0 +1,64 @@
+CCS PCH C Compiler, Version 5.008, 5967               13-Sep-23 22:07
+
+               Filename:   D:\Microcontrollers\Blink_LED\input_software.lst
+
+               ROM used:   44 bytes (0%)
+                           Largest free fragment is 32724
+               RAM used:   5 (0%) at main() level
+                           5 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0004
+.................... #include <18f4520.h> 
+.................... //////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay( clock = 20000000 ) // 20MHz 
+.................... #fuses HS, NOWDT, NOLVP 
+....................  
+.................... main() { 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  MOVF   FC1,W
+000A:  ANDLW  C0
+000C:  IORLW  0F
+000E:  MOVWF  FC1
+0010:  MOVLW  07
+0012:  MOVWF  FB4
+....................     
+....................    set_tris_c( 0x01 ); 
+0014:  MOVLW  01
+0016:  MOVWF  F94
+....................     
+....................    while( 1 ) { 
+....................       if( input( PIN_C0 ) == 1 ) { 
+0018:  BSF    F94.0
+001A:  BTFSS  F82.0
+001C:  BRA    0024
+....................          output_high( PIN_C7 ); 
+001E:  BCF    F94.7
+0020:  BSF    F8B.7
+....................       } 
+0022:  BRA    0028
+....................       else { 
+....................          output_low( PIN_C7 ); 
+0024:  BCF    F94.7
+0026:  BCF    F8B.7
+....................       } 
+0028:  BRA    0018
+....................    } 
+.................... } 
+002A:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

@@ -1,0 +1,45 @@
+
+ROM used:   200/16384 (1%)
+            200/16384 (1%) including unused fragments
+
+            0.2 Average locations per line
+            16.7 Average locations per statement
+
+RAM used:   14/1536 (1%) at main() level
+            14/1536 (1%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   40    12 100  Basic_IO_PORTB.c
+  824     0   0  C:\Program Files (x86)\PICC\Devices\18F4520.h
+----- -----
+  864    12 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40  10    1    66  2.6  @delay_ms1
+0    156  39    2   253  4.5  main
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              12
+    Comments                151
+    Volume (V)              378
+    Difficulty (D)          7.1
+    Effort to implement (E) 2675
+    Time to implement (T)   2 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    154
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   196  32568  
+
+
+

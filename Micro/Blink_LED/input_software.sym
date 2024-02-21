@@ -1,0 +1,60 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.@SCRATCH1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+000014  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\Blink_LED\
+
+Project Files:
+    input_software.c                                        [30-Aug-23 13:18  CRC=0886E292]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [03-Jul-13 14:29  CRC=A6EEBE86]
+
+Source signature=56645F9E
+
+Units:
+    input_software (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   input_software.xsym
+    Errors:      input_software.err
+    Ext Symbols: input_software.esym
+    INHX32:      input_software.hex
+    Symbols:     input_software.sym
+    List:        input_software.lst
+    Debug/COFF:  input_software.cof
+    Project:     input_software.ccspjt
+    Call Tree:   input_software.tre
+    Statistics:  input_software.STA

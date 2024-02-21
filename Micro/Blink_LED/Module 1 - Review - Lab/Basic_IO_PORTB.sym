@@ -1,0 +1,67 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 TRISB
+006-007 LATB
+008-009 PORTB
+00A-00B ADCON1
+00C     main.@SCRATCH1
+00D     @delay_ms1.P1
+00D     main.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+00002C  @cinit1
+00002C  main
+00005C  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\Blink_LED\Module 1 - Review - Lab\
+
+Project Files:
+    Basic_IO_PORTB.c                                        [09-Sep-23 12:35  CRC=12C06B7A]
+    C:\Program Files (x86)\PICC\Devices\18F4520.h           [03-Jul-13 14:29  CRC=A6EEBE86]
+
+Source signature=609DE886
+
+Units:
+    Basic_IO_PORTB (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Basic_IO_PORTB.xsym
+    Errors:      Basic_IO_PORTB.err
+    Ext Symbols: Basic_IO_PORTB.esym
+    INHX32:      Basic_IO_PORTB.hex
+    Symbols:     Basic_IO_PORTB.sym
+    List:        Basic_IO_PORTB.lst
+    Debug/COFF:  Basic_IO_PORTB.cof
+    Project:     Basic_IO_PORTB.ccspjt
+    Call Tree:   Basic_IO_PORTB.tre
+    Statistics:  Basic_IO_PORTB.STA

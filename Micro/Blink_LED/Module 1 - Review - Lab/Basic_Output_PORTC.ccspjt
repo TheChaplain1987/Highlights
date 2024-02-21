@@ -1,0 +1,16 @@
+[PROJECT]
+Target=Basic_Output_PORTC.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=Basic_Output_PORTC.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Basic_Output_PORTC.c]
+Type=4
+[mru-list]
+1=Basic_Output_PORTC.c
+[Units]
+Count=1
+1=Basic_Output_PORTC (main)

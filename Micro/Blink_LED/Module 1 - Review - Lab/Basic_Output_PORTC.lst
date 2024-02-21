@@ -1,0 +1,74 @@
+CCS PCH C Compiler, Version 5.008, 5967               07-Sep-23 18:39
+
+               Filename:   D:\Microcontrollers\Blink_LED\Module 1 - Review - Lab\Basic_Output_PORTC.lst
+
+               ROM used:   68 bytes (0%)
+                           Largest free fragment is 32700
+               RAM used:   11 (1%) at main() level
+                           11 (1%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0004
+.................... // Program to blink an LED connected to C0 
+.................... // with the PIC18F4520 MCU 
+....................  
+.................... #include <18F4520.h> 
+.................... //////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay( clock = 20000000 )   // Set clock to 20MHz 
+.................... #fuses HS, NOWDT, NOLVP 
+....................  
+.................... int *TRISC = 0xF94;              // Connect to PORTC 
+.................... int *LATC = 0xF8B; 
+....................  
+.................... int main( void ) { 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  MOVLW  0F
+000A:  MOVWF  05
+000C:  MOVLW  94
+000E:  MOVWF  04
+0010:  MOVLW  0F
+0012:  MOVWF  07
+0014:  MOVLW  8B
+0016:  MOVWF  06
+0018:  MOVF   FC1,W
+001A:  ANDLW  C0
+001C:  IORLW  0F
+001E:  MOVWF  FC1
+0020:  MOVLW  07
+0022:  MOVWF  FB4
+....................  
+....................    *TRISC = 0x00;                // Make all PORTC pins OUTPUT 
+0024:  MOVFF  04,FE9
+0028:  MOVFF  05,FEA
+002C:  CLRF   FEF
+....................     
+....................    while( 1 ) {                  // Loop forever 
+....................       *LATC |= 0x01;             // Turn on C0 
+002E:  MOVFF  07,03
+0032:  MOVFF  06,FE9
+0036:  MOVFF  07,FEA
+003A:  MOVF   FEF,W
+003C:  IORLW  01
+003E:  MOVWF  FEF
+0040:  BRA    002E
+....................    } 
+....................  
+.................... } 
+....................  
+0042:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

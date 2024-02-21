@@ -1,0 +1,64 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 TRISC
+006-007 LATC
+008     main.@SCRATCH1
+009     main.@SCRATCH2
+00A     main.@SCRATCH3
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+000024  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\Blink_LED\Module 1 - Review - Lab\
+
+Project Files:
+    Basic_Output_PORTC.c                                    [07-Sep-23 18:39  CRC=865F7BBD]
+    C:\Program Files (x86)\PICC\Devices\18F4520.h           [03-Jul-13 14:29  CRC=A6EEBE86]
+
+Source signature=D43CF8C9
+
+Units:
+    Basic_Output_PORTC (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Basic_Output_PORTC.xsym
+    Errors:      Basic_Output_PORTC.err
+    Ext Symbols: Basic_Output_PORTC.esym
+    INHX32:      Basic_Output_PORTC.hex
+    Symbols:     Basic_Output_PORTC.sym
+    List:        Basic_Output_PORTC.lst
+    Debug/COFF:  Basic_Output_PORTC.cof
+    Project:     Basic_Output_PORTC.ccspjt
+    Call Tree:   Basic_Output_PORTC.tre
+    Statistics:  Basic_Output_PORTC.STA

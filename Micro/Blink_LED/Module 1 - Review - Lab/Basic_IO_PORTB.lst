@@ -1,0 +1,148 @@
+CCS PCH C Compiler, Version 5.008, 5967               09-Sep-23 12:35
+
+               Filename:   D:\Microcontrollers\Blink_LED\Module 1 - Review - Lab\Basic_IO_PORTB.lst
+
+               ROM used:   200 bytes (1%)
+                           Largest free fragment is 32568
+               RAM used:   14 (1%) at main() level
+                           14 (1%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0000:  GOTO   002C
+.................... // Program to control an LED at PIN_B0 with a button at PIN_B7 
+.................... // MCU: PIC18F4520 
+.................... // Author: J. Martin 9/9/2023 
+....................  
+.................... #include <18F4520.h> 
+.................... //////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay( clock = 20000000 ) // set clock to 20MHz 
+0004:  CLRF   FEA
+0006:  MOVLW  0D
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BZ    0028
+000E:  MOVLW  06
+0010:  MOVWF  01
+0012:  CLRF   00
+0014:  DECFSZ 00,F
+0016:  BRA    0014
+0018:  DECFSZ 01,F
+001A:  BRA    0012
+001C:  MOVLW  7B
+001E:  MOVWF  00
+0020:  DECFSZ 00,F
+0022:  BRA    0020
+0024:  DECFSZ FEF,F
+0026:  BRA    000E
+0028:  GOTO   00C0 (RETURN)
+.................... #fuses HS, NOWDT, NOLVP 
+....................  
+.................... int *TRISB = 0xF93; // Connect to registers 
+.................... int *LATB = 0xF8A; 
+.................... int *PORTB = 0xF81; 
+....................  
+.................... struct _adcon1 { // Structure for ADCON1 for PORTB (Hybrid port) 
+....................    int PCFGx:4; 
+....................    int VCFG0:1; 
+....................    int VCFG1:1; 
+....................    int unused:2; 
+.................... }; 
+.................... struct _adcon1 *ADCON1 = 0xFC1; // Connect to ADCON1 
+....................  
+.................... int main( void ) { 
+002C:  CLRF   FF8
+002E:  BCF    FD0.7
+0030:  MOVLW  0F
+0032:  MOVWF  05
+0034:  MOVLW  93
+0036:  MOVWF  04
+0038:  MOVLW  0F
+003A:  MOVWF  07
+003C:  MOVLW  8A
+003E:  MOVWF  06
+0040:  MOVLW  0F
+0042:  MOVWF  09
+0044:  MOVLW  81
+0046:  MOVWF  08
+0048:  MOVLW  0F
+004A:  MOVWF  0B
+004C:  MOVLW  C1
+004E:  MOVWF  0A
+0050:  MOVF   FC1,W
+0052:  ANDLW  C0
+0054:  IORLW  0F
+0056:  MOVWF  FC1
+0058:  MOVLW  07
+005A:  MOVWF  FB4
+....................     
+....................       *TRISB = 0x80; // Make B7 INPUT, all others OUTPUT 
+005C:  MOVFF  04,FE9
+0060:  MOVFF  05,FEA
+0064:  MOVLW  80
+0066:  MOVWF  FEF
+....................       *LATB = 0x00; // Clear all PORTB data latches 
+0068:  MOVFF  06,FE9
+006C:  MOVFF  07,FEA
+0070:  CLRF   FEF
+....................       *PORTB = 0x00; 
+0072:  MOVFF  08,FE9
+0076:  MOVFF  09,FEA
+007A:  CLRF   FEF
+....................       ADCON1 -> PCFGx = 0x0F; 
+007C:  MOVFF  0A,FE9
+0080:  MOVFF  0B,FEA
+0084:  MOVLW  F0
+0086:  ANDWF  FEF,W
+0088:  IORLW  0F
+008A:  MOVWF  FEF
+....................        
+....................       while( 1 ) { 
+....................          if( *PORTB == 0x80 ) { 
+008C:  MOVFF  09,03
+0090:  MOVFF  08,FE9
+0094:  MOVFF  09,FEA
+0098:  MOVF   FEF,W
+009A:  SUBLW  80
+009C:  BNZ   00AC
+....................             *LATB = 0x01; 
+009E:  MOVFF  06,FE9
+00A2:  MOVFF  07,FEA
+00A6:  MOVLW  01
+00A8:  MOVWF  FEF
+....................          } 
+00AA:  BRA    00B6
+....................          else { 
+....................             *LATB = 0x00; 
+00AC:  MOVFF  06,FE9
+00B0:  MOVFF  07,FEA
+00B4:  CLRF   FEF
+....................          } 
+....................          delay_ms( 500 ); 
+00B6:  MOVLW  02
+00B8:  MOVWF  0C
+00BA:  MOVLW  FA
+00BC:  MOVWF  0D
+00BE:  BRA    0004
+00C0:  DECFSZ 0C,F
+00C2:  BRA    00BA
+00C4:  BRA    008C
+....................       } 
+.................... } 
+....................  
+00C6:  SLEEP 
+....................  
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

@@ -1,0 +1,50 @@
+[PROJECT]
+Target=input_software.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=input_software.c
+[input_software.c]
+Type=4
+[mru-list]
+1=input_software.c
+
+[defines]
+buildcount=2
+
+[ProjectLog]
+Days=2
+D1=30-08-2023
+D1_L=2
+D1_L1=[48177]Stopped Editing.
+TotalEdit=0
+TotalDebug=0
+D1_E=0
+D1_D=0
+D1_L2=[48916]Project Closed.
+D2=05-09-2023
+D2_L=6
+D2_L1=[53975]Project Opened.
+D2_L2=[53976]Project Closed.
+D2_L3=[53976]Project Opened.
+D2_L4=[54054]Started Editing.
+D2_L5=[54793]Stopped Editing.
+D2_L6=[54869]Project Closed.
+
+[fileformats]
+forcecoff=0
+
+[Opened Files]
+1=input_software.c
+t1=1
+2=..\..\Messing around\anotherswitch.c
+t2=1
+3=
+t3=1
+Count=3
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Units]
+Count=1
+1=input_software (main)
