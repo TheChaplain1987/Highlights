@@ -1,0 +1,50 @@
+[PROJECT]
+Target=Mod6_Lab_Compare_JamesMartin.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=Mod6_Lab_Compare_JamesMartin.c
+[Mod6_Lab_Compare_JamesMartin.c]
+Type=4
+[mru-list]
+1=Mod6_Lab_Compare_JamesMartin.c
+
+[defines]
+buildcount=12
+
+[ProjectLog]
+Days=2
+D1=01-11-2023
+D1_L=7
+D1_L1=[49224]Started Editing.
+D1_L2=[49754]Stopped Editing.
+D1_L3=[49999]Started Editing.
+D1_L4=[50620]Stopped Editing.
+D1_L5=[50693]Started Editing.
+D1_L6=[51640]Stopped Editing.
+TotalEdit=25
+TotalDebug=0
+D1_E=25
+D1_D=0
+D1_L7=[51641]Project Closed.
+D2=07-11-2023
+D2_L=3
+D2_L1=[52133]Project Opened.
+D2_L2=[52141]Started Editing.
+D2_L3=[52405]Project Closed.
+
+[Opened Files]
+1=..\..\Library\myLibrary.h
+t1=89
+Count=2
+2=..\..\PWM\t2PWM.c
+t2=89
+3=..\..\Library\myLibrary.h
+t3=1
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=Mod6_Lab_Compare_JamesMartin (main)

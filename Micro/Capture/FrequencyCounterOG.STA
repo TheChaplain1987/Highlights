@@ -1,0 +1,67 @@
+
+ROM used:   2568/32768 (8%)
+            2568/32768 (8%) including unused fragments
+
+            2.1 Average locations per line
+            31.3 Average locations per statement
+
+RAM used:   100/1536 (7%) at main() level
+            140/1536 (9%) worst case
+
+Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   51    21  26  FrequencyCounterOG.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+  125     0   0  ..\..\Library\myLibrary.h
+  185    61  74  ..\..\Library\modifiedlcd.h
+----- -----
+ 1217    82 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   1    1             @delay_ms1
+0     20   0    0     13  1.0  @const773
+0     60   1    3    463  4.3  lcd_read_byte
+0     30   1    1    134  2.2  lcd_send_nibble
+0     54   1    3    317  4.3  lcd_send_byte
+0     58   1    2    319  4.7  lcd_init
+0     36   1    4    186  5.5  lcd_gotoxy
+0     66   1    1    272  4.1  lcd_putc
+0     12   0    0     29  1.2  int_timer1_isr
+0    102   2    4    131  2.8  int_ccp1_isr
+0     86   2   14             @MUL3232
+0    552  11    8    526  4.1  MAIN
+0     10   0    0             @const812
+0     56   1    2             @ITOF
+0    242   5   11             @MULFF
+0    348   7   14             @DIVFF
+0     32   1    3             @PSTRINGCN_793
+0     64   1    5             @FTOSD
+0    142   3   13             @DIV3232
+0    378   7   13             @PRINTF_L32D_793FPFPF
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               10
+    Statements              82
+    Comments                250
+    Volume (V)              3811
+    Difficulty (D)          33.7
+    Effort to implement (E) 128321
+    Time to implement (T)   1 hours, 59 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   6
+    Maintainability (MI)    156
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000B8   178  0  
+000BA-07FFE  2386  30196  
+
+
+

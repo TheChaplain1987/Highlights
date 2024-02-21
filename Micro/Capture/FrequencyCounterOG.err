@@ -1,0 +1,30 @@
+Compiling D:\Microcontrollers\Timers\Capture\FrequencyCounterOG on 31-Oct-23 at 15:20
+>>> Warning 203 "D:\Microcontrollers\Timers\Capture\FrequencyCounterOG.c" Line 42(1,1): Condition always TRUE
+>>> Warning 208 "D:\Microcontrollers\Timers\Capture\FrequencyCounterOG.c" Line 25(1,5): Function not void and does not return a value  MAIN
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 3(6,11): Variable never used:   TRISA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 4(6,11): Variable never used:   TRISB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 6(6,11): Variable never used:   TRISD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 7(6,11): Variable never used:   TRISE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 9(6,10): Variable never used:   LATA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 10(6,10): Variable never used:   LATB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 11(6,10): Variable never used:   LATC
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 12(6,10): Variable never used:   LATD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 13(6,10): Variable never used:   LATE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 15(6,11): Variable never used:   PORTA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 16(6,11): Variable never used:   PORTB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 17(6,11): Variable never used:   PORTC
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 18(6,11): Variable never used:   PORTD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 19(6,11): Variable never used:   PORTE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 27(17,23): Variable never used:   ADCON0
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 35(17,23): Variable never used:   ADCON1
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 43(17,23): Variable never used:   ADCON2
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 45(8,9): Variable never used:   Q
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 46(6,12): Variable never used:   ADRESH
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 47(6,12): Variable never used:   ADRESL
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 71(18,25): Variable never used:   INTCON3
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 83(18,25): Variable never used:   INTCON2
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 114(18,25): Variable never used:   CCP2CON
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 124(18,25): Variable never used:   ECCP1AS
+      Memory usage:   ROM=8%      RAM=7% - 9%
+      0 Errors,  26 Warnings.
+Build Successful.

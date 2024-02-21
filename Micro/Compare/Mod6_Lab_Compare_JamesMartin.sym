@@ -1,0 +1,178 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019-01A TRISA
+01B-01C TRISB
+01D-01E TRISC
+01F-020 TRISD
+021-022 TRISE
+023-024 LATA
+025-026 LATB
+027-028 LATC
+029-02A LATD
+02B-02C LATE
+02D-02E PORTA
+02F-030 PORTB
+031-032 PORTC
+033-034 PORTD
+035-036 PORTE
+037-038 ADCON0
+039-03A ADCON1
+03B-03C ADCON2
+03D-03E Q
+03F-040 ADRESH
+041-042 ADRESL
+043-044 INTCON
+045-046 INTCON3
+047-048 INTCON2
+049-04A PIE1
+04B-04C T1CON
+04D-04E T2CON
+04F-050 CCP1CON
+051-052 CCP2CON
+053-054 CCPR1
+055-056 CCPR1L
+057-058 PR2
+059-05A ECCP1AS
+05B-05E Vin
+05F-060 x
+061-062 @sprintf_string
+063-066 @FLT.P1
+063     lcd_init.i
+063     MAIN.@SCRATCH1
+063     @PSTRINGC_801.@SCRATCH1
+064     lcd_init.@SCRATCH1
+064     MAIN.@SCRATCH2
+064     @PSTRINGC_801.@SCRATCH2
+065     lcd_putc.c
+066     @delay_ms1.P1
+066     lcd_gotoxy.x
+067     lcd_gotoxy.y
+067-06A @FLT.P1
+068     lcd_gotoxy.address
+069     lcd_gotoxy.@SCRATCH1
+06A     lcd_send_byte.address
+06B     lcd_send_byte.n
+06B     @FLT.@SCRATCH1
+06C     lcd_read_byte.low
+06C     lcd_send_byte.@SCRATCH1
+06C     @FLT.@SCRATCH2
+06D     lcd_send_nibble.n
+06D     lcd_read_byte.high
+06E     lcd_read_byte.@SCRATCH1
+06F     int_ad_isr.@SCRATCH1
+06F     int_ccp1_isr.@SCRATCH1
+070     int_ad_isr.@SCRATCH2
+070     int_ccp1_isr.@SCRATCH2
+071-072 @ITOF.P1
+071-074 @MULFF.P2
+071     int_ccp1_isr.@SCRATCH3
+072     int_ccp1_isr.@SCRATCH4
+075-078 @MULFF.P1
+079     @MULFF.@SCRATCH1
+07A     @MULFF.@SCRATCH2
+07B     @MULFF.@SCRATCH3
+F83     PSP_DATA
+F83     lcd
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000BA  LCD_INIT_STRING.call
+0000CA  LCD_INIT_STRING.data
+0000CE  @ITOF
+000106  @MULFF
+0001FA  int_ad_isr
+00024A  int_ccp1_isr
+00027C  @const822.call
+000282  @const827.call
+000288  @const828.call
+00028E  @const829.call
+000294  @const830.call
+0002A6  @delay_ms1
+0002CC  lcd_send_nibble
+0002EA  lcd_read_byte
+000326  lcd_send_byte
+00035C  lcd_init
+000396  @FLT
+00040C  lcd_gotoxy
+000430  lcd_putc
+000474  @PSTRINGC_801
+000494  @cinit1
+000494  MAIN
+0005C2  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\Timers\Compare\
+
+Project Files:
+    Mod6_Lab_Compare_JamesMartin.c                          [01-Nov-23 14:20  CRC=80FD4614]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [17-Apr-19 13:56  CRC=BB1FBD69]
+    ..\..\Library\myLibrary.h                               [07-Nov-23 14:32  CRC=79D4F174]
+    ..\..\Library\modifiedlcd.h                             [12-Sep-23 16:20  CRC=D13833BC]
+
+Source signature=58625C69
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=1305
+
+Units:
+    D:\Microcontrollers\Timers\Compare\Mod6_Lab_Compare_JamesMartin (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Mod6_Lab_Compare_JamesMartin.xsym
+    Errors:      Mod6_Lab_Compare_JamesMartin.err
+    Ext Symbols: Mod6_Lab_Compare_JamesMartin.esym
+    INHX32:      Mod6_Lab_Compare_JamesMartin.hex
+    Symbols:     Mod6_Lab_Compare_JamesMartin.sym
+    List:        Mod6_Lab_Compare_JamesMartin.lst
+    Debug/COFF:  Mod6_Lab_Compare_JamesMartin.cof
+    Project:     Mod6_Lab_Compare_JamesMartin.ccspjt
+    Call Tree:   Mod6_Lab_Compare_JamesMartin.tre
+    Statistics:  Mod6_Lab_Compare_JamesMartin.STA

@@ -1,0 +1,72 @@
+#include <18f4520.h>
+#use delay (clock = 20000000)
+#fuses HS, NOWDT, NOLVP
+#include "../../Library/myLibrary.h"
+#include "../../Library/modifiedlcd.h"
+
+float Vin = 0;
+int x = 1000;
+
+#INT_AD
+void int_ad_isr() {
+   Vin = *Q * (5.0 / 1023.0 );
+}
+
+#INT_CCP1
+void int_ccp1_isr() {
+   *CCPR1 = *CCPR1 +  x;
+   // output_toggle(PIN_C3);
+}
+
+main(){
+   // Initialize LCD
+   lcd_init();
+   
+   // Analog setup
+   *TRISA = 0x01;
+   ADCON1 -> PCFGx = 0xE;
+   ADCON0 -> ADON = 1;
+   ADCON0 -> CHSx = 0;   // Channel 0
+   ADCON1 -> VCFG0 = 0;  
+   ADCON1 -> VCFG1 = 0;  
+   ADCON2 -> ADFM = 1;   // Right Justified
+   ADCON2 -> ACQTx = 5;
+   ADCON2 -> ADCSx = 5;
+   
+   // Interrupt setup
+   PIE1 -> ADIE = 1;
+  
+   // CCP setup
+   *TRISC = 0x00;
+   CCP1CON -> CCPxMx = 0x2;
+   T1CON -> TMR1ON = 1;
+   PIE1 -> CCP1IE = 1;
+   INTCON -> PEIE = 1;
+   INTCON -> GIE = 1;
+   
+   while(1){
+      ADCON0 -> GODONE=1;   // Trigger
+      delay_ms( 250 );
+      
+      if( Vin > 3.18 && Vin < 3.20 ) {
+         printf(lcd_putc,"\fSW1");
+         x = 10E3;
+      }
+      else if( Vin > 2.80 && Vin < 2.90 ) {
+         printf(lcd_putc,"\fSW2");
+         x = 20E3;
+      }
+      else if( Vin > 2.30 && Vin < 2.40 ) {
+         printf(lcd_putc,"\fSW3");
+         x = 30E3;
+      }
+      else if( Vin > 1.50 && Vin < 1.60 ) {
+         printf(lcd_putc,"\fSW4");
+         x = 40E3;
+      }
+      else {
+         printf(lcd_putc,"\fPush a button...");
+      }
+   }
+}
+

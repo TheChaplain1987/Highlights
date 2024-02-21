@@ -1,0 +1,209 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019-01A TRISA
+01B-01C TRISB
+01D-01E TRISC
+01F-020 TRISD
+021-022 TRISE
+023-024 LATA
+025-026 LATB
+027-028 LATC
+029-02A LATD
+02B-02C LATE
+02D-02E PORTA
+02F-030 PORTB
+031-032 PORTC
+033-034 PORTD
+035-036 PORTE
+037-038 ADCON0
+039-03A ADCON1
+03B-03C ADCON2
+03D-03E Q
+03F-040 ADRESH
+041-042 ADRESL
+043-044 INTCON
+045-046 INTCON3
+047-048 INTCON2
+049-04A PIE1
+04B-04C T1CON
+04D-04E CCP1CON
+04F-050 CCP2CON
+051-052 CCPR1
+053-054 ECCP1AS
+055     x
+056-057 tstop
+058-059 tstart
+05A-05B telapsed
+05C-05F MAIN.T1c
+060     lcd_init.i
+060-061 @ITOF.P1
+060-063 @DIVFF.P2
+060     MAIN.@SCRATCH1
+061     lcd_init.@SCRATCH1
+061     MAIN.@SCRATCH2
+062     MAIN.@SCRATCH3
+063     MAIN.@SCRATCH4
+064-067 @PRINTF_L32D_793FPFPF.P1
+064     @PSTRINGCN_793.P2
+064-067 @DIVFF.P3
+065     @PSTRINGCN_793.@SCRATCH1
+066     @PSTRINGCN_793.@SCRATCH2
+068     @PRINTF_L32D_793FPFPF.P1
+068     @DIVFF.@SCRATCH1
+069     @DIVFF.@SCRATCH2
+069     @PRINTF_L32D_793FPFPF.@SCRATCH1
+06A     @DIVFF.@SCRATCH3
+06A     @PRINTF_L32D_793FPFPF.@SCRATCH2
+06B     @DIVFF.@SCRATCH4
+06B     @PRINTF_L32D_793FPFPF.@SCRATCH3
+06C     @DIVFF.@SCRATCH5
+06C     @PRINTF_L32D_793FPFPF.@SCRATCH4
+06D     @DIVFF.@SCRATCH6
+06D     @PRINTF_L32D_793FPFPF.@SCRATCH5
+06E     @PRINTF_L32D_793FPFPF.@SCRATCH6
+06F     @PRINTF_L32D_793FPFPF.@SCRATCH7
+070     @PRINTF_L32D_793FPFPF.@SCRATCH8
+071-074 @DIV3232.P1
+071     lcd_putc.c
+071-074 @FTOSD.P1
+071-074 @MULFF.P2
+072     lcd_gotoxy.x
+072     @delay_ms1.P1
+073     lcd_gotoxy.y
+074     lcd_gotoxy.address
+075-078 @MULFF.P1
+075-078 @DIV3232.P2
+075     lcd_gotoxy.@SCRATCH1
+075     @FTOSD.@SCRATCH1
+076     lcd_send_byte.address
+077     lcd_send_byte.n
+078     lcd_read_byte.low
+078     lcd_send_byte.@SCRATCH1
+079     lcd_read_byte.high
+079     lcd_send_nibble.n
+079     @MULFF.@SCRATCH1
+079     @DIV3232.@SCRATCH1
+07A     lcd_read_byte.@SCRATCH1
+07A     @MULFF.@SCRATCH2
+07A     @DIV3232.@SCRATCH2
+07B     @MULFF.@SCRATCH3
+07B     @DIV3232.@SCRATCH3
+07C     @DIV3232.@SCRATCH4
+07D     @DIV3232.@SCRATCH5
+07E-081 @MUL3232.P1
+07E     int_ccp1_isr.@SCRATCH1
+07F     int_ccp1_isr.@SCRATCH2
+080     int_ccp1_isr.@SCRATCH3
+081     int_ccp1_isr.@SCRATCH4
+082-085 @MUL3232.P1
+086     @MUL3232.@SCRATCH1
+087     @MUL3232.@SCRATCH2
+088     @MUL3232.@SCRATCH3
+089     @MUL3232.@SCRATCH4
+08A     @MUL3232.@SCRATCH5
+08B     @MUL3232.@SCRATCH6
+F83     lcd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000BA  LCD_INIT_STRING.call
+0000CA  LCD_INIT_STRING.data
+0000CE  int_timer1_isr
+0000DA  @MUL3232
+000130  int_ccp1_isr
+000196  @const812.call
+0001A0  @delay_ms1
+0001C6  lcd_send_nibble
+0001E4  lcd_read_byte
+000220  lcd_send_byte
+000256  lcd_init
+000290  @ITOF
+0002C8  @MULFF
+0003BA  @DIVFF
+000516  lcd_gotoxy
+00053A  lcd_putc
+00057C  @PSTRINGCN_793
+00059C  @FTOSD
+0005DC  @DIV3232
+00066A  @PRINTF_L32D_793FPFPF
+0007E4  @cinit1
+0007E4  MAIN
+0008E8  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\Timers\Capture\
+
+Project Files:
+    FrequencyCounterOG.c                                    [31-Oct-23 15:20  CRC=2D1430CD]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [17-Apr-19 14:56  CRC=BB1FBD69]
+    ..\..\Library\myLibrary.h                               [31-Oct-23 14:06  CRC=8C7D0A00]
+    ..\..\Library\modifiedlcd.h                             [12-Sep-23 16:20  CRC=D13833BC]
+
+Source signature=17215FAE
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=57AA
+
+Units:
+    D:\Microcontrollers\Timers\Capture\FrequencyCounterOG (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   FrequencyCounterOG.xsym
+    Errors:      FrequencyCounterOG.err
+    Ext Symbols: FrequencyCounterOG.esym
+    INHX32:      FrequencyCounterOG.hex
+    Symbols:     FrequencyCounterOG.sym
+    List:        FrequencyCounterOG.lst
+    Debug/COFF:  FrequencyCounterOG.cof
+    Project:     FrequencyCounterOG.ccspjt
+    Call Tree:   FrequencyCounterOG.tre
+    Statistics:  FrequencyCounterOG.STA

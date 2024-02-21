@@ -1,0 +1,41 @@
+[PROJECT]
+Target=FrequencyCounter.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=FrequencyCounter.c
+[FrequencyCounter.c]
+Type=4
+[mru-list]
+1=FrequencyCounter.c
+
+[defines]
+buildcount=10
+
+[Opened Files]
+1=..\..\Library\myLibrary.h
+t1=1
+2=FrequencyCounter.c
+t2=29
+3=..\..\Library\modifiedlcd.h
+t3=22
+Count=4
+4=FrequencyCounterOG.c
+t4=22
+
+[ProjectLog]
+Days=1
+D1=31-10-2023
+D1_L=8
+D1_L1=[50178]Stopped Editing.
+D1_L2=[50707]Started Editing.
+D1_L3=[51343]Stopped Editing.
+D1_L4=[51916]Started Editing.
+D1_L5=[52574]Stopped Editing.
+D1_L6=[52625]Started Editing.
+D1_L7=[52936]Stopped Editing.
+D1_L8=[53004]Project Closed.
+[Units]
+Count=1
+1=FrequencyCounter (main)

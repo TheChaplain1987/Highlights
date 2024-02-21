@@ -1,0 +1,53 @@
+#include <18f4520.h>
+#use delay (clock = 20000000)
+#fuses HS, NOWDT, NOLVP
+#include "../../Library/myLibrary.h"
+#include "../../Library/modifiedlcd.h"
+
+unsigned int x = 0;
+unsigned int16 tstop, tstart, telapsed;
+float TCCPx, RPM;
+
+#INT_TIMER1
+void int_timer1_isr(){
+   x++;                     // Count the overflows
+}
+
+#INT_CCP1
+void int_ccp1_isr(){
+    tstop = *CCPR1;   // 16 bit pointer to CCPR1L
+    telapsed = x * 0x10000 -tstart + tstop;
+    x = 0;   // Rest Overflowwe
+    tstart = tstop;
+}
+
+main(){
+   lcd_init();   // Initializing the LCD Panel
+   float T1c = 4 * 1 / 20000000.0;  
+   *TRISC = 0x4;          // 0000 0100   C2 is input
+   // Capture System Setup
+   CCP1CON->CCPxMx = 0x4; //Capture every falling
+   
+   // Timer Setup
+   //T1CON->TMR1ON = 1;     // Timer is ON
+   T1CON->TMR1CS = 0;     // Fosc / 4
+   T1CON->T1CKPSx = 0;    // PS = 1;
+   
+   // Interrupt System Setup
+   PIE1->TMR1IE = 1;      // Timer 1 overflow interrupt system 0n
+   PIE1->CCP1IE = 1;      // CCP1 Interrupt Systen ON
+   INTCON->PEIE = 1;
+   INTCON->GIE = 1;       // Interrupt System Enabled
+   while(1){
+         // Just show me the data
+         // Math
+         TCCPx = telapsed * T1c;
+         RPM = 60.0 / ( 161.0 * TCCPx );
+         //printf(lcd_putc,"\f F = %f", 1.0/(T1c * telapsed) );
+         printf(lcd_putc,"\f F = %f",RPM );
+         delay_ms(500);
+   }
+}
+
+   
+   
