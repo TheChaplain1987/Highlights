@@ -1,0 +1,13 @@
+ÀÄFinalBenchMaster
+   ÃÄMAIN  0/544  Ram=3
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄlcd_init  0/68  Ram=2
+   ³     ÃÄ@delay_ms1  0/38  Ram=1
+   ³     ÃÄlcd_send_nibble  0/34  Ram=1
+   ³     ÃÄ@const792  0/30  Ram=0
+   ³     ÃÄlcd_send_byte  0/56  Ram=3
+   ³     ³  ÃÄlcd_read_byte  0/60  Ram=3
+   ³     ³  ÃÄlcd_send_nibble  0/34  Ram=1
+   ³     ³  ÀÄlcd_send_nibble  0/34  Ram=1
+   ³     ÀÄ@delay_ms1  0/38  Ram=1
+   ÀÄint_ext_isr  0/574  Ram=4

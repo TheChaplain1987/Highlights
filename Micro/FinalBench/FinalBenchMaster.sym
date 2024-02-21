@@ -1,0 +1,147 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016-017 TRISA
+018-019 TRISB
+01A-01B TRISC
+01C-01D TRISD
+01E-01F TRISE
+020-021 LATA
+022-023 LATB
+024-025 LATC
+026-027 LATD
+028-029 LATE
+02A-02B PORTA
+02C-02D PORTB
+02E-02F PORTC
+030-031 PORTD
+032-033 PORTE
+034-035 ADCON0
+036-037 ADCON1
+038-039 ADCON2
+03A-03B Q
+03C-03D ADRESH
+03E-03F ADRESL
+040-041 INTCON
+042-043 INTCON3
+044-045 INTCON2
+046-047 PIE1
+048-049 PIE2
+04A-04B T1CON
+04C-04D T2CON
+04E-04F CCP1CON
+050-051 CCP2CON
+052-053 CCPR1
+054-055 CCPR1L
+056-057 CCPR2
+058-059 CCPR2L
+05A-05B PR2
+05C-05D ECCP1AS
+05E-05F TXSTA
+060-061 RCSTA
+062-063 BAUDCON
+064-065 SPBRG
+066-067 TXREG
+068-069 RCREG
+06A     lcd_init.i
+06A     MAIN.@SCRATCH1
+06B     @delay_ms1.P1
+06B     lcd_init.@SCRATCH1
+06B     MAIN.@SCRATCH2
+06C     lcd_send_byte.address
+06C     MAIN.@SCRATCH3
+06D     lcd_send_byte.n
+06E     lcd_read_byte.low
+06E     lcd_send_byte.@SCRATCH1
+06F     lcd_read_byte.high
+06F     lcd_send_nibble.n
+070     lcd_read_byte.@SCRATCH1
+071     int_ext_isr.@SCRATCH1
+072     int_ext_isr.@SCRATCH2
+073     int_ext_isr.@SCRATCH3
+074     int_ext_isr.@SCRATCH4
+F83     lcd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  LCD_INIT_STRING.call
+0000B0  LCD_INIT_STRING.data
+0000B4  int_ext_isr
+0002F2  @delay_ms1
+000318  lcd_send_nibble
+00033A  lcd_read_byte
+000376  lcd_send_byte
+0003AE  lcd_init
+0003F2  @cinit1
+0003F2  MAIN
+000554  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\FinalBench\
+
+Project Files:
+    FinalBenchMaster.c                                      [13-Dec-23 18:45  CRC=FC7EA973]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [03-Jul-13 13:29  CRC=A6EEBE86]
+    ..\Library\myLibrary.h                                  [29-Nov-23 13:20  CRC=D0EC7287]
+    ..\Library\modifiedlcd.h                                [12-Sep-23 16:20  CRC=D13833BC]
+
+Source signature=16CA41F8
+
+Units:
+    FinalBenchMaster (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   FinalBenchMaster.xsym
+    Errors:      FinalBenchMaster.err
+    Ext Symbols: FinalBenchMaster.esym
+    INHX32:      FinalBenchMaster.hex
+    Symbols:     FinalBenchMaster.sym
+    List:        FinalBenchMaster.lst
+    Debug/COFF:  FinalBenchMaster.cof
+    Project:     FinalBenchMaster.ccspjt
+    Call Tree:   FinalBenchMaster.tre
+    Statistics:  FinalBenchMaster.STA

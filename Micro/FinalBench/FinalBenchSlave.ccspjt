@@ -1,0 +1,16 @@
+[PROJECT]
+Target=FinalBenchSlave.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=FinalBenchSlave.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;D:\Microcontrollers\Library\
+[FinalBenchSlave.c]
+Type=4
+[mru-list]
+1=FinalBenchSlave.c
+[Units]
+Count=1
+1=FinalBenchSlave (main)

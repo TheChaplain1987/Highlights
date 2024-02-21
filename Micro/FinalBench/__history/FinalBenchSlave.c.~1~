@@ -1,0 +1,9 @@
+#include <18f4520.h>
+#use delay (clock = 20000000)
+#fuses HS, NOWDT, NOLVP
+#include "../Library/myLibrary.h"
+#include "../Library/modifiedlcd.h"
+
+main() {
+
+}

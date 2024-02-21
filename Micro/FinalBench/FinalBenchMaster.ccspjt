@@ -1,0 +1,21 @@
+[PROJECT]
+Target=FinalBenchMaster.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=FinalBenchMaster.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;D:\Microcontrollers\Library\
+[FinalBenchMaster.c]
+Type=4
+[mru-list]
+1=FinalBenchMaster.c
+[Opened Files]
+1=FinalBenchMaster.c
+2=FinalBenchSlave.c
+3=..\USART_Cruise_Control\CC_Control.c
+4=
+[Units]
+Count=1
+1=FinalBenchMaster (main)

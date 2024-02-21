@@ -1,0 +1,168 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017-018 TRISA
+019-01A TRISB
+01B-01C TRISC
+01D-01E TRISD
+01F-020 TRISE
+021-022 LATA
+023-024 LATB
+025-026 LATC
+027-028 LATD
+029-02A LATE
+02B-02C PORTA
+02D-02E PORTB
+02F-030 PORTC
+031-032 PORTD
+033-034 PORTE
+035-036 ADCON0
+037-038 ADCON1
+039-03A ADCON2
+03B-03C Q
+03D-03E ADRESH
+03F-040 ADRESL
+041-042 INTCON
+043-044 INTCON3
+045-046 INTCON2
+047-048 PIE1
+049-04A PIE2
+04B-04C T1CON
+04D-04E T2CON
+04F-050 CCP1CON
+051-052 CCP2CON
+053-054 CCPR1
+055-056 CCPR1L
+057-058 CCPR2
+059-05A CCPR2L
+05B-05C PR2
+05D-05E ECCP1AS
+05F-060 TXSTA
+061-062 RCSTA
+063-064 BAUDCON
+065-066 SPBRG
+067-068 TXREG
+069-06A RCREG
+06B     lcd_init.i
+06B     MAIN.@SCRATCH1
+06C     lcd_init.@SCRATCH1
+06C     MAIN.@SCRATCH2
+06D     MAIN.@SCRATCH3
+072     int_rda_isr.@SCRATCH1
+073     @PSTRINGCN_813.P1
+073     @PRINTF_D_813.P2
+074     @PRINTF_D_813.P1
+074     @PSTRINGCN_813.@SCRATCH1
+075     @PSTRINGCN_813.@SCRATCH2
+075     @PRINTF_D_813.@SCRATCH1
+076     @PRINTF_D_813.@SCRATCH2
+077     @PRINTF_D_813.@SCRATCH3
+078     @PRINTF_D_813.@SCRATCH4
+079     lcd_putc.c
+079     @DIV88.P1
+07A     @delay_ms1.P1
+07A     @DIV88.P2
+07A     lcd_gotoxy.x
+07B     lcd_gotoxy.y
+07B     @DIV88.@SCRATCH1
+07C     lcd_gotoxy.address
+07D     lcd_gotoxy.@SCRATCH1
+07E     lcd_send_byte.address
+07F     lcd_send_byte.n
+080     lcd_read_byte.low
+080     lcd_send_byte.@SCRATCH1
+081     lcd_read_byte.high
+081     lcd_send_nibble.n
+082     lcd_read_byte.@SCRATCH1
+F83     lcd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  LCD_INIT_STRING.call
+0000B0  LCD_INIT_STRING.data
+0000B4  lcd_read_byte
+0000EE  lcd_send_nibble
+000110  lcd_send_byte
+000146  @delay_ms1
+00016C  lcd_gotoxy
+000190  lcd_putc
+0001D2  @PSTRINGCN_813
+0001F2  @DIV88
+00021A  @PRINTF_D_813
+0002C6  int_rda_isr
+0002F4  @const820.call
+000302  lcd_init
+000376  MAIN
+000376  @cinit1
+0004D8  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\FinalBench\
+
+Project Files:
+    FinalBenchSlave.c                                       [13-Dec-23 18:38  CRC=3D3F15E6]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [03-Jul-13 13:29  CRC=A6EEBE86]
+    ..\Library\myLibrary.h                                  [29-Nov-23 13:20  CRC=D0EC7287]
+    ..\Library\modifiedlcd.h                                [12-Sep-23 16:20  CRC=D13833BC]
+
+Source signature=578AAE6B
+
+Units:
+    FinalBenchSlave (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   FinalBenchSlave.xsym
+    Errors:      FinalBenchSlave.err
+    Ext Symbols: FinalBenchSlave.esym
+    INHX32:      FinalBenchSlave.hex
+    Symbols:     FinalBenchSlave.sym
+    List:        FinalBenchSlave.lst
+    Debug/COFF:  FinalBenchSlave.cof
+    Project:     FinalBenchSlave.ccspjt
+    Call Tree:   FinalBenchSlave.tre
+    Statistics:  FinalBenchSlave.STA

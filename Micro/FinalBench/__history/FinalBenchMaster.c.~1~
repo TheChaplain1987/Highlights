@@ -1,0 +1,22 @@
+#include <18f4520.h>
+#use delay (clock = 20000000)
+#fuses HS, NOWDT, NOLVP
+#include "../../Library/myLibrary.h"
+#include "../Library/modifiedlcd.h"
+
+#INT_EXT
+void int_ext_isr(){
+   output_toggle(PIN_B7); // Application
+}
+
+
+main(){
+   ADCON1->PCFGx = 0xF; // Digital
+   *TRISB = 0x01;       // Input
+   INTCON->GIE=1;       // Global
+   INTCON->PEIE=1;      // Peripheral
+   INTCON2->INTEDG0=0;  // Fallling
+   INTCON->INT0IE=1;    // INT0 ON
+   while(1){
+   }
+}

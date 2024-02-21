@@ -1,0 +1,36 @@
+ÀÄFinalBenchSlave
+   ÃÄMAIN  0/476  Ram=3
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄlcd_init  0/116  Ram=2
+   ³     ÃÄ@delay_ms1  0/38  Ram=1
+   ³     ÃÄlcd_send_nibble  0/34  Ram=1
+   ³     ÃÄ@const792  0/30  Ram=0
+   ³     ÃÄlcd_send_byte  0/54  Ram=3
+   ³     ³  ÃÄlcd_read_byte  0/58  Ram=3
+   ³     ³  ÃÄlcd_send_nibble  0/34  Ram=1
+   ³     ³  ÀÄlcd_send_nibble  0/34  Ram=1
+   ³     ÀÄ@delay_ms1  0/38  Ram=1
+   ÀÄint_rda_isr  0/46  Ram=1
+      ÃÄ@PSTRINGCN_813  0/32  Ram=3
+      ³  ÀÄlcd_putc  0/66  Ram=1
+      ³     ÃÄlcd_send_byte  0/54  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÃÄ@delay_ms1  0/38  Ram=1
+      ³     ÃÄlcd_gotoxy  0/36  Ram=4
+      ³     ³  ÀÄlcd_send_byte  0/54  Ram=3
+      ³     ³     ÀÄ*
+      ³     ÃÄlcd_send_byte  0/54  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÀÄlcd_send_byte  0/54  Ram=3
+      ³        ÀÄ*
+      ÀÄ@PRINTF_D_813  0/172  Ram=6
+         ÃÄ@DIV88  0/40  Ram=3
+         ÃÄ@DIV88  0/40  Ram=3
+         ÃÄlcd_putc  0/66  Ram=1
+         ³  ÀÄ*
+         ÃÄlcd_putc  0/66  Ram=1
+         ³  ÀÄ*
+         ÃÄlcd_putc  0/66  Ram=1
+         ³  ÀÄ*
+         ÀÄlcd_putc  0/66  Ram=1
+            ÀÄ*
