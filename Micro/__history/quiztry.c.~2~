@@ -1,0 +1,29 @@
+#include <18f4520.h>
+
+#use delay (clock = 20000000)
+
+#fuses HS, NOWDT, NOLVP
+
+#include "Library\Registers.h"
+
+#INT_TIMER1
+
+void int_timer1_isr(){
+
+   *PORTB ^= 0x01;    // PIN_B0
+
+}
+
+main(){
+
+   *TRISB = 0x00;
+
+   *T1CON  =  *T1CON | 0x31;
+
+   *PIE1 |= 0x01;
+
+   *INTCON |= 0xC0;
+
+   while(1);
+
+}
