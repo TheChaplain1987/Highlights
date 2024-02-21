@@ -1,0 +1,67 @@
+[PROJECT]
+Target=Rx_BitBang.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=Rx_BitBang.c
+[Rx_BitBang.c]
+Type=4
+[mru-list]
+1=Rx_BitBang.c
+
+[defines]
+buildcount=19
+
+[ProjectLog]
+Days=1
+D1=21-11-2023
+D1_L=23
+D1_L1=[55292]Started Editing.
+D1_L2=[55559]Stopped Editing.
+TotalEdit=31
+TotalDebug=0
+D1_E=31
+D1_D=0
+D1_L3=[55559]Project Closed.
+D1_L4=[58672]Project Opened.
+D1_L5=[58705]Project Closed.
+D1_L6=[58746]Project Opened.
+D1_L7=[58768]Started Editing.
+D1_L8=[58995]Stopped Editing.
+D1_L9=[58997]Project Closed.
+D1_L10=[59074]Project Opened.
+D1_L11=[59113]Started Editing.
+D1_L12=[60015]Stopped Editing.
+D1_L13=[60015]Project Closed.
+D1_L14=[60042]Project Opened.
+D1_L15=[60229]Started Editing.
+D1_L16=[60232]Stopped Editing.
+D1_L17=[60234]Project Closed.
+D1_L18=[60468]Project Opened.
+D1_L19=[60481]Project Closed.
+D1_L20=[60612]Project Opened.
+D1_L21=[60745]Started Editing.
+D1_L22=[61037]Stopped Editing.
+D1_L23=[61037]Project Closed.
+
+[Opened Files]
+1=..\Library\myLibrary.h
+t1=148
+2=..\PWM\t2PWM.c
+t2=1
+3=..\PWM\Module 8 Lab\PWMLab.c
+t3=1
+4=C:\Users\jmartin36\Downloads\t2PWMwPushButton.c
+t4=1
+5=TX_BitBang.c
+t5=1
+6=Rx_BitBang.c
+t6=2
+Count=6
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=Rx_BitBang (main)

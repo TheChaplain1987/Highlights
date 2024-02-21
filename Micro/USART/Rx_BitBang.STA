@@ -1,0 +1,65 @@
+
+ROM used:   2566/32768 (8%)
+            2566/32768 (8%) including unused fragments
+
+            2.0 Average locations per line
+            32.9 Average locations per statement
+
+RAM used:   112/1536 (7%) at main() level
+            147/1536 (10%) worst case
+
+Stack used: 7 worst case (2 in main + 5 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   40    17  22  Rx_BitBang.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+  179     0   0  ..\Library\myLibrary.h
+  185    61  78  ..\Library\modifiedlcd.h
+----- -----
+ 1260    78 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   1    1             @delay_ms1
+0     20   0    0             @const815
+0     58   1    3    463  4.3  lcd_read_byte
+0     30   1    1    134  2.2  lcd_send_nibble
+0     54   1    3    317  4.3  lcd_send_byte
+0    106   2    2    319  4.7  lcd_init
+0     36   1    4    186  5.5  lcd_gotoxy
+0     66   1    1    272  4.1  lcd_putc
+0    254   5    4    142  2.7  int_rda_isr
+0     56   1    2    394  3.3  @ITOF
+0    346   7   14    394  3.3  @DIVFF
+0    242   5   11    848  3.4  @MULFF
+0     64   1    5    394  3.3  @FTOSD
+0    142   3   13    848  3.4  @DIV3232
+0    376   7   13     98  2.1  @PRINTF_L32D_835FPFPF
+0     10   0    0    394  3.3  @const860
+0     32   1    3    394  3.3  @PSTRINGCN_835
+0    466   9    2    394  3.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               16
+    Statements              78
+    Comments                244
+    Volume (V)              10209
+    Difficulty (D)          56.9
+    Effort to implement (E) 580771
+    Time to implement (T)   8 hours, 58 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   6
+    Maintainability (MI)    100
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE  2396  30198  
+
+
+

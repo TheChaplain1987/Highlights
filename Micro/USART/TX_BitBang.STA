@@ -1,0 +1,67 @@
+
+ROM used:   2608/32768 (8%)
+            2608/32768 (8%) including unused fragments
+
+            2.0 Average locations per line
+            28.0 Average locations per statement
+
+RAM used:   116/1536 (8%) at main() level
+            168/1536 (11%) worst case
+
+Stack used: 11 worst case (5 in main + 6 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   63    32  34  TX_BitBang.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+  179     0   0  ..\Library\myLibrary.h
+  185    61  66  ..\Library\modifiedlcd.h
+----- -----
+ 1283    93 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   1    1             @delay_ms1
+0     20   0    0             @const815
+0     58   1    3    463  4.3  lcd_read_byte
+0     30   1    1    134  2.2  lcd_send_nibble
+0     54   1    3    317  4.3  lcd_send_byte
+0    106   2    2    319  4.7  lcd_init
+0     34   1    4    186  5.5  lcd_gotoxy
+0     66   1    1    272  4.1  lcd_putc
+0     46   1    0     33  1.3  int_rda_isr
+0     10   0    0             @const844
+0     30   1    3             @PSTRINGCN_835
+0    242   5   11             @MULFF
+0     62   1    5             @FTOSD
+0    142   3   13             @DIV3232
+0    376   7   13             @PRINTF_L32D_835FPFPF
+0    140   3    2     98  2.1  int_ad_isr
+0     54   1    2             @ITOF
+0     58   1    4             @SFTOI
+0    848  16    4   1040  4.3  MAIN
+0     12   0    0             @const866
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               9
+    Statements              93
+    Comments                251
+    Volume (V)              4367
+    Difficulty (D)          31.9
+    Effort to implement (E) 139084
+    Time to implement (T)   2 hours, 9 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   6
+    Maintainability (MI)    148
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000B8   178  0  
+000BA-07FFE  2426  30156  
+
+
+

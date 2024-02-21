@@ -1,0 +1,41 @@
+Compiling D:\Microcontrollers\USART\Rx_BitBang on 21-Nov-23 at 16:57
+>>> Warning 203 "D:\Microcontrollers\USART\Rx_BitBang.c" Line 35(1,1): Condition always TRUE
+>>> Warning 208 "D:\Microcontrollers\USART\Rx_BitBang.c" Line 16(1,5): Function not void and does not return a value  MAIN
+>>> Warning 216 "D:\Microcontrollers\USART\Rx_BitBang.c" Line 37(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "D:\Microcontrollers\USART\Rx_BitBang.c" Line 37(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_send_nibble)
+>>> Warning 216 "D:\Microcontrollers\USART\Rx_BitBang.c" Line 37(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_send_byte)
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 3(6,11): Variable never used:   TRISA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 4(6,11): Variable never used:   TRISB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 6(6,11): Variable never used:   TRISD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 7(6,11): Variable never used:   TRISE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 9(6,10): Variable never used:   LATA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 10(6,10): Variable never used:   LATB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 11(6,10): Variable never used:   LATC
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 12(6,10): Variable never used:   LATD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 13(6,10): Variable never used:   LATE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 15(6,11): Variable never used:   PORTA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 16(6,11): Variable never used:   PORTB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 17(6,11): Variable never used:   PORTC
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 18(6,11): Variable never used:   PORTD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 19(6,11): Variable never used:   PORTE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 27(17,23): Variable never used:   ADCON0
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 35(17,23): Variable never used:   ADCON1
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 43(17,23): Variable never used:   ADCON2
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 45(8,9): Variable never used:   Q
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 46(6,12): Variable never used:   ADRESH
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 47(6,12): Variable never used:   ADRESL
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 71(18,25): Variable never used:   INTCON3
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 83(18,25): Variable never used:   INTCON2
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 106(16,21): Variable never used:   T1CON
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 114(16,21): Variable never used:   T2CON
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 121(18,25): Variable never used:   CCP1CON
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 122(18,25): Variable never used:   CCP2CON
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 124(8,13): Variable never used:   CCPR1
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 125(6,12): Variable never used:   CCPR1L
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 126(6,9): Variable never used:   PR2
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 134(18,25): Variable never used:   ECCP1AS
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 136(6,12): Variable never used:   CCPR2L
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 176(6,11): Variable never used:   TXREG
+      Memory usage:   ROM=8%      RAM=7% - 10%
+      0 Errors,  37 Warnings.
+Build Successful.
