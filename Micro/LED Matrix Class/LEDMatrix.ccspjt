@@ -1,0 +1,28 @@
+[PROJECT]
+Target=LEDMatrix.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=LEDMatrix.c
+[LEDMatrix.c]
+Type=4
+[mru-list]
+1=LEDMatrix.c
+[Units]
+Count=1
+1=LEDMatrix (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=06-09-2023
+D1_L=2
+D1_L1=[52658]Stopped Editing.
+TotalEdit=2
+TotalDebug=0
+D1_E=2
+D1_D=0
+D1_L2=[53124]Project Closed.

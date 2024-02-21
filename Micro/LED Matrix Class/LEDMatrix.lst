@@ -1,0 +1,247 @@
+CCS PCH C Compiler, Version 5.085, 47635               06-Sep-23 14:32
+
+               Filename:   D:\Microcontrollers\GPIO\LED Matrix Class\LEDMatrix.lst
+
+               ROM used:   302 bytes (1%)
+                           Largest free fragment is 32466
+               RAM used:   41 (3%) at main() level
+                           42 (3%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   006A
+.................... #include <18F4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay( clock = 20000000 ) 
+*
+0042:  CLRF   FEA
+0044:  MOVLW  27
+0046:  MOVWF  FE9
+0048:  MOVF   FEF,W
+004A:  BZ    0066
+004C:  MOVLW  06
+004E:  MOVWF  01
+0050:  CLRF   00
+0052:  DECFSZ 00,F
+0054:  BRA    0052
+0056:  DECFSZ 01,F
+0058:  BRA    0050
+005A:  MOVLW  7B
+005C:  MOVWF  00
+005E:  DECFSZ 00,F
+0060:  BRA    005E
+0062:  DECFSZ FEF,F
+0064:  BRA    004C
+0066:  GOTO   0122 (RETURN)
+.................... #fuses HS, NOWDT, NOLVP 
+.................... #include "../../Library/myLibrary.h" 
+.................... // A library for the PIC18F4520 
+....................  
+.................... int *TRISA = 0xF92; // Connect to TRISx 
+.................... int *TRISB = 0xF93; 
+.................... int *TRISC = 0xF94; 
+.................... int *TRISD = 0xF95; 
+.................... int *TRISE = 0xF96; 
+....................  
+.................... int *LATA = 0xF89;  // Connect to LATx 
+.................... int *LATB = 0xF8A; 
+.................... int *LATC = 0xF8B; 
+.................... int *LATD = 0xF8C; 
+.................... int *LATE = 0xF8D; 
+....................  
+.................... int *PORTA = 0xF80; // Connect to LATx 
+.................... int *PORTB = 0xF81; 
+.................... int *PORTC = 0xF82; 
+.................... int *PORTD = 0xF83; 
+.................... int *PORTE = 0xF84; 
+....................  
+.................... struct _adcon1 {   // Analog vs digital 
+....................    int PCFGx:4; 
+....................    int VCFG0:1; 
+....................    int VCFG1:1; 
+....................    int unused:2; 
+.................... }; 
+.................... struct _adcon1 *ADCON1 = 0xFC1; 
+....................  
+.................... #include "../../Library/ledMatrixPortB.h" 
+.................... struct myMatrix { 
+....................    int ROWS:4; 
+....................    int COLs:4; 
+.................... }; 
+.................... struct myMatrix *MATRIX = 0xF82; 
+....................  
+.................... // Declarations and prototype 
+.................... void light_column_number( int x ); 
+....................  
+.................... // Definitions 
+.................... void light_column_number( int x ) { 
+....................    if( x >= 1 && x <= 3 ) { 
+*
+0004:  MOVF   27,W
+0006:  SUBLW  00
+0008:  BTFSC  FD8.0
+000A:  GOTO   003E
+000E:  MOVF   27,W
+0010:  SUBLW  03
+0012:  BTFSS  FD8.0
+0014:  GOTO   003E
+....................       MATRIX -> ROWS = 0xF; 
+0018:  MOVFF  24,FE9
+001C:  MOVFF  25,FEA
+0020:  MOVLW  F0
+0022:  ANDWF  FEF,W
+0024:  IORLW  0F
+0026:  MOVWF  FEF
+....................       MATRIX -> COLS = x; 
+0028:  MOVFF  24,FE9
+002C:  MOVFF  25,FEA
+0030:  SWAPF  27,W
+0032:  ANDLW  F0
+0034:  MOVWF  00
+0036:  MOVLW  0F
+0038:  ANDWF  FEF,W
+003A:  IORWF  00,W
+003C:  MOVWF  FEF
+....................    } 
+003E:  GOTO   011C (RETURN)
+.................... } 
+....................  
+....................  
+....................  
+.................... int main( void ) { 
+*
+006A:  CLRF   FF8
+006C:  BCF    FD0.7
+006E:  MOVLW  0F
+0070:  MOVWF  05
+0072:  MOVLW  92
+0074:  MOVWF  04
+0076:  MOVLW  0F
+0078:  MOVWF  07
+007A:  MOVLW  93
+007C:  MOVWF  06
+007E:  MOVLW  0F
+0080:  MOVWF  09
+0082:  MOVLW  94
+0084:  MOVWF  08
+0086:  MOVLW  0F
+0088:  MOVWF  0B
+008A:  MOVLW  95
+008C:  MOVWF  0A
+008E:  MOVLW  0F
+0090:  MOVWF  0D
+0092:  MOVLW  96
+0094:  MOVWF  0C
+0096:  MOVLW  0F
+0098:  MOVWF  0F
+009A:  MOVLW  89
+009C:  MOVWF  0E
+009E:  MOVLW  0F
+00A0:  MOVWF  11
+00A2:  MOVLW  8A
+00A4:  MOVWF  10
+00A6:  MOVLW  0F
+00A8:  MOVWF  13
+00AA:  MOVLW  8B
+00AC:  MOVWF  12
+00AE:  MOVLW  0F
+00B0:  MOVWF  15
+00B2:  MOVLW  8C
+00B4:  MOVWF  14
+00B6:  MOVLW  0F
+00B8:  MOVWF  17
+00BA:  MOVLW  8D
+00BC:  MOVWF  16
+00BE:  MOVLW  0F
+00C0:  MOVWF  19
+00C2:  MOVLW  80
+00C4:  MOVWF  18
+00C6:  MOVLW  0F
+00C8:  MOVWF  1B
+00CA:  MOVLW  81
+00CC:  MOVWF  1A
+00CE:  MOVLW  0F
+00D0:  MOVWF  1D
+00D2:  MOVLW  82
+00D4:  MOVWF  1C
+00D6:  MOVLW  0F
+00D8:  MOVWF  1F
+00DA:  MOVLW  83
+00DC:  MOVWF  1E
+00DE:  MOVLW  0F
+00E0:  MOVWF  21
+00E2:  MOVLW  84
+00E4:  MOVWF  20
+00E6:  MOVLW  0F
+00E8:  MOVWF  23
+00EA:  MOVLW  C1
+00EC:  MOVWF  22
+00EE:  MOVLW  0F
+00F0:  MOVWF  25
+00F2:  MOVLW  82
+00F4:  MOVWF  24
+00F6:  MOVF   FC1,W
+00F8:  ANDLW  C0
+00FA:  IORLW  0F
+00FC:  MOVWF  FC1
+00FE:  MOVLW  07
+0100:  MOVWF  FB4
+0102:  MOVLW  01
+0104:  MOVWF  26
+....................     
+....................    BYTE x = 1; 
+....................     
+....................    *TRISC = 0x00; 
+0106:  MOVFF  08,FE9
+010A:  MOVFF  09,FEA
+010E:  CLRF   FEF
+....................     
+....................    while( 1 ) { 
+....................       if( x <= 4 ) { 
+0110:  MOVF   26,W
+0112:  SUBLW  04
+0114:  BNC   0126
+....................          light_column_number( x ); 
+0116:  MOVFF  26,27
+011A:  BRA    0004
+....................          delay_ms( 200 ); 
+011C:  MOVLW  C8
+011E:  MOVWF  27
+0120:  BRA    0042
+....................          x++; 
+0122:  INCF   26,F
+....................       } 
+0124:  BRA    012A
+....................       else { 
+....................          x = 1; 
+0126:  MOVLW  01
+0128:  MOVWF  26
+....................       } 
+012A:  BRA    0110
+....................    } 
+.................... } 
+....................  
+012C:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

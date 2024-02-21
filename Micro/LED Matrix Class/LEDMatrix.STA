@@ -1,0 +1,48 @@
+
+ROM used:   302/32768 (1%)
+            302/32768 (1%) including unused fragments
+
+            0.3 Average locations per line
+            21.6 Average locations per statement
+
+RAM used:   41/1536 (3%) at main() level
+            42/1536 (3%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   25    10  71  LEDMatrix.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18F4520.h
+   28     0   0  ..\..\Library\myLibrary.h
+   18     4  29  ..\..\Library\ledMatrixPortB.h
+----- -----
+  927    14 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     40   7    1             @delay_ms1
+0     62  10    3    118  3.9  light_column_number
+0    196  32    3    192  4.4  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              14
+    Comments                159
+    Volume (V)              378
+    Difficulty (D)          7.8
+    Effort to implement (E) 2958
+    Time to implement (T)   3 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   2
+    Maintainability (MI)    159
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   298  32466  
+
+
+
