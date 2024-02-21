@@ -1,0 +1,44 @@
+[PROJECT]
+Target=BasicOutputPORTC.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=BasicOutputPORTC.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;D:\Microcontrollers\Library\;D:\Microcontrollers\Library\..\Library\
+[BasicOutputPORTC.c]
+Type=4
+[mru-list]
+1=BasicOutputPORTC.c
+[Opened Files]
+1=..\..\4x4 Matrix\4x4_Matrix_Lab_LATC.c
+2=BasicOutputPORTC.c
+3=BasicOutputPORTC.c
+4=
+5=
+t1=1
+t2=1
+Count=2
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=20-09-2023
+D1_L=4
+D1_L1=[42885]Project Opened.
+D1_L2=[46238]Started Editing.
+D1_L3=[47276]Stopped Editing.
+TotalEdit=13
+TotalDebug=0
+D1_E=13
+D1_D=0
+D1_L4=[48821]Project Closed.
+
+[defines]
+buildcount=6
+[Units]
+Count=1
+1=BasicOutputPORTC (main)

@@ -1,0 +1,107 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016-017 TRISA
+018-019 TRISB
+01A-01B TRISC
+01C-01D TRISD
+01E-01F TRISE
+020-021 LATA
+022-023 LATB
+024-025 LATC
+026-027 LATD
+028-029 LATE
+02A-02B PORTA
+02C-02D PORTB
+02E-02F PORTC
+030-031 PORTD
+032-033 PORTE
+034-035 ADCON1
+036-037 INTCON
+038-039 INTCON3
+03A-03B INTCON2
+03C     index
+03D     ext_int_B1.x
+03D     MAIN.@SCRATCH1
+03E     ext_int_B1.@SCRATCH1
+03E     MAIN.@SCRATCH2
+03F     ext_int_B1.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  int_ext_isr
+00009E  ext_int_B1
+0000E8  @cinit1
+0000E8  MAIN
+000196  @cinit2
+000214  @goto10604
+
+Project Directory:
+    D:\Microcontrollers\External Interrupts\Module 3 - Lab\
+
+Project Files:
+    BasicOutputPORTCinterrupt.c                             [20-Sep-23 20:33  CRC=78ECA931]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [03-Jul-13 14:29  CRC=A6EEBE86]
+    ..\..\Library\myLibrary.h                               [19-Sep-23 15:03  CRC=223114BD]
+    ..\..\Library\interrupts.h                              [20-Sep-23 20:33  CRC=490202A2]
+
+Source signature=D41081B8
+
+Units:
+    BasicOutputPORTCinterrupt (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   BasicOutputPORTCinterrupt.xsym
+    Errors:      BasicOutputPORTCinterrupt.err
+    Ext Symbols: BasicOutputPORTCinterrupt.esym
+    INHX32:      BasicOutputPORTCinterrupt.hex
+    Symbols:     BasicOutputPORTCinterrupt.sym
+    List:        BasicOutputPORTCinterrupt.lst
+    Debug/COFF:  BasicOutputPORTCinterrupt.cof
+    Project:     BasicOutputPORTCinterrupt.ccspjt
+    Call Tree:   BasicOutputPORTCinterrupt.tre
+    Statistics:  BasicOutputPORTCinterrupt.STA

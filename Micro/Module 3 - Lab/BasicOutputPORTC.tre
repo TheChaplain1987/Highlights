@@ -1,0 +1,5 @@
+ÀÄBasicOutputPORTC
+   ÃÄMAIN  0/334  Ram=2
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄ@goto15281  0/34  Ram=0
+   ÀÄint_ext_isr  0/8  Ram=0

@@ -1,0 +1,109 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019-01A TRISA
+01B-01C TRISB
+01D-01E TRISC
+01F-020 TRISD
+021-022 TRISE
+023-024 LATA
+025-026 LATB
+027-028 LATC
+029-02A LATD
+02B-02C LATE
+02D-02E PORTA
+02F-030 PORTB
+031-032 PORTC
+033-034 PORTD
+035-036 PORTE
+037-038 ADCON1
+039-03A INTCON
+03B-03C INTCON3
+03D-03E INTCON2
+03F     index
+040     MAIN.@SCRATCH1
+041     MAIN.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  int_ext_isr
+0000B6  MAIN
+0000B6  @cinit1
+000164  @cinit2
+000204  @goto15281
+
+Project Directory:
+    D:\Microcontrollers\External Interrupts\Module 4 - Lab\
+
+Project Files:
+    BasicOutputPORTC.c                                      [20-Sep-23 13:33  CRC=253D8CCA]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [17-Apr-19 14:56  CRC=BB1FBD69]
+    ..\..\Library\..\Library\myLibrary.h                    [19-Sep-23 15:03  CRC=223114BD]
+
+Source signature=24BF73AD
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=E57A
+
+Units:
+    D:\Microcontrollers\External Interrupts\Module 4 - Lab\BasicOutputPORTC (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   BasicOutputPORTC.xsym
+    Errors:      BasicOutputPORTC.err
+    Ext Symbols: BasicOutputPORTC.esym
+    INHX32:      BasicOutputPORTC.hex
+    Symbols:     BasicOutputPORTC.sym
+    List:        BasicOutputPORTC.lst
+    Debug/COFF:  BasicOutputPORTC.cof
+    Project:     BasicOutputPORTC.ccspjt
+    Call Tree:   BasicOutputPORTC.tre
+    Statistics:  BasicOutputPORTC.STA

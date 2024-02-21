@@ -1,0 +1,51 @@
+
+ROM used:   572/16384 (2%)
+            572/16384 (2%) including unused fragments
+
+            0.6 Average locations per line
+            17.9 Average locations per statement
+
+RAM used:   63/1536 (4%) at main() level
+            64/1536 (4%) worst case
+
+Stack used: 2 worst case (1 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   47    20  62  BasicOutputPORTCinterrupt.c
+  824     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+   64     0   0  ..\..\Library\myLibrary.h
+   33    12  38  ..\..\Library\interrupts.h
+----- -----
+  968    32 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     74   6    3   123  2.2  ext_int_B1
+0      8   1    0    14  0.7  int_ext_isr
+0    300  26    2   437  6.1  MAIN
+0     44   4    0             @goto10604
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              32
+    Comments                157
+    Volume (V)              703
+    Difficulty (D)          9.2
+    Effort to implement (E) 6499
+    Time to implement (T)   6 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   5
+    Maintainability (MI)    55
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE   426  32192  
+
+
+

@@ -1,0 +1,6 @@
+ÀÄBasicOutputPORTCinterrupt
+   ÃÄMAIN  0/300  Ram=2
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄext_int_B1  0/74  Ram=3
+   ³  ÀÄ@goto10604  0/44  Ram=0
+   ÀÄint_ext_isr  0/8  Ram=0

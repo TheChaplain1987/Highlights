@@ -1,0 +1,21 @@
+[PROJECT]
+Target=BasicOutputPORTCinterrupt.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=BasicOutputPORTCinterrupt.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;D:\Microcontrollers\Library\
+[BasicOutputPORTCinterrupt.c]
+Type=4
+[mru-list]
+1=BasicOutputPORTCinterrupt.c
+[Opened Files]
+1=BasicOutputPORTCinterrupt.c
+2=..\..\Library\interrupts.h
+3=../../Library/myLibrary.h
+4=
+[Units]
+Count=1
+1=BasicOutputPORTCinterrupt (main)

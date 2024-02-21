@@ -1,0 +1,49 @@
+
+ROM used:   546/32768 (2%)
+            546/32768 (2%) including unused fragments
+
+            0.6 Average locations per line
+            23.7 Average locations per statement
+
+RAM used:   66/1536 (4%) at main() level
+            66/1536 (4%) worst case
+
+Stack used: 1 worst case (0 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   49    23 100  BasicOutputPORTC.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+   64     0   0  ..\..\Library\..\Library\myLibrary.h
+----- -----
+  969    23 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0      8   1    0     14  0.7  int_ext_isr
+0    334  31    2    576  6.2  MAIN
+0     34   3    0    223  3.2  @goto15281
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              23
+    Comments                166
+    Volume (V)              984
+    Difficulty (D)          10.7
+    Effort to implement (E) 10540
+    Time to implement (T)   10 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   5
+    Maintainability (MI)    64
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE   376  32218  
+
+
+
