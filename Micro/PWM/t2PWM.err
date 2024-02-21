@@ -1,0 +1,3 @@
+Compiling D:\Microcontrollers\PWM\t2PWM on 08-Nov-23 at 13:42
+>>> Warning 203 "D:\Microcontrollers\PWM\t2PWM.c" Line 12(1,1): Condition always TRUE
+>>> Warning 208 "D:\Microcontrollers\PWM\t2PWM.c" Line 6(1,5): Function not void and does not return a value  main

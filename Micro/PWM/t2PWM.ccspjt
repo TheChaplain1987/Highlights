@@ -1,0 +1,42 @@
+[PROJECT]
+Target=t2PWM.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=t2PWM.c
+[t2PWM.c]
+Type=4
+[mru-list]
+1=t2PWM.c
+[Units]
+Count=1
+1=t2PWM (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=2
+D1=07-11-2023
+D1_L=4
+D1_L1=[52734]Stopped Editing.
+D1_L2=[53271]Started Editing.
+D1_L3=[53579]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L4=[53776]Project Closed.
+D2=08-11-2023
+D2_L=7
+D2_L1=[46804]Project Opened.
+D2_L2=[46805]Project Closed.
+D2_L3=[46805]Project Opened.
+D2_L4=[48565]Started Editing.
+D2_L5=[48865]Stopped Editing.
+D2_L6=[49161]Started Editing.
+D2_L7=[49410]Project Closed.
+
+[fileformats]
+forcecoff=0

@@ -1,0 +1,53 @@
+[PROJECT]
+Target=PWMLab.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.085
+Compiler=PCH
+[Target Data]
+FileList=PWMLab.c
+[PWMLab.c]
+Type=4
+[mru-list]
+1=PWMLab.c
+
+[defines]
+buildcount=9
+
+[ProjectLog]
+Days=2
+D1=08-11-2023
+D1_L=7
+D1_L1=[49591]Project Closed.
+D1_L2=[49616]Project Opened.
+D1_L3=[49695]Started Editing.
+D1_L4=[50853]Stopped Editing.
+D1_L5=[50900]Started Editing.
+D1_L6=[51058]Stopped Editing.
+TotalEdit=17
+TotalDebug=0
+D1_E=17
+D1_D=0
+D1_L7=[51058]Project Closed.
+D2=21-11-2023
+D2_L=4
+D2_L1=[51871]Project Opened.
+D2_L2=[51871]Project Closed.
+D2_L3=[51872]Project Opened.
+D2_L4=[52478]Project Closed.
+
+[fileformats]
+forcecoff=0
+
+[Opened Files]
+1=..\..\Library\myLibrary.h
+t1=113
+2=..\t2PWM.c
+t2=1
+3=PWMLab.c
+t3=1
+Count=4
+4=C:\Users\jmartin36\Downloads\t2PWMwPushButton.c
+t4=1
+[Units]
+Count=1
+1=PWMLab (main)

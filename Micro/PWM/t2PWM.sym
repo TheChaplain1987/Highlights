@@ -1,0 +1,99 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 TRISA
+006-007 TRISB
+008-009 TRISC
+00A-00B TRISD
+00C-00D TRISE
+00E-00F LATA
+010-011 LATB
+012-013 LATC
+014-015 LATD
+016-017 LATE
+018-019 PORTA
+01A-01B PORTB
+01C-01D PORTC
+01E-01F PORTD
+020-021 PORTE
+022-023 ADCON0
+024-025 ADCON1
+026-027 ADCON2
+028-029 Q
+02A-02B ADRESH
+02C-02D ADRESL
+02E-02F INTCON
+030-031 INTCON3
+032-033 INTCON2
+034-035 PIE1
+036-037 T1CON
+038-039 T2CON
+03A-03B CCP1CON
+03C-03D CCP2CON
+03E-03F CCPR1
+040-041 CCPR1L
+042-043 PR2
+044-045 ECCP1AS
+046     main.@SCRATCH1
+047     main.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+00011C  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\PWM\
+
+Project Files:
+    t2PWM.c                                                 [07-Nov-23 14:33  CRC=D55B495B]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [17-Apr-19 13:56  CRC=BB1FBD69]
+    ..\Library\myLibrary.h                                  [07-Nov-23 14:32  CRC=79D4F174]
+
+Source signature=8424E9AC
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=580A
+
+Units:
+    D:\Microcontrollers\PWM\t2PWM (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   t2PWM.xsym
+    Errors:      t2PWM.err
+    Ext Symbols: t2PWM.esym
+    INHX32:      t2PWM.hex
+    Symbols:     t2PWM.sym
+    List:        t2PWM.lst
+    Debug/COFF:  t2PWM.cof
+    Project:     t2PWM.ccspjt
+    Call Tree:   t2PWM.tre
+    Statistics:  t2PWM.STA

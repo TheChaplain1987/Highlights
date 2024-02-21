@@ -1,0 +1,45 @@
+
+ROM used:   350/32768 (1%)
+            350/32768 (1%) including unused fragments
+
+            0.3 Average locations per line
+            50.0 Average locations per statement
+
+RAM used:   72/1536 (5%) at main() level
+            72/1536 (5%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   17     7 100  t2PWM.c
+  856     0   0  C:\Program Files (x86)\PICC\Devices\18f4520.h
+  137     0   0  ..\Library\myLibrary.h
+----- -----
+ 1010     7 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0    346  49    2    147  3.0  main
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              7
+    Comments                163
+    Volume (V)              149
+    Difficulty (D)          2.8
+    Effort to implement (E) 425
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    153
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   346  32418  
+
+
+

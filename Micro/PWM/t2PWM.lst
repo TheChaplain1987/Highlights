@@ -1,0 +1,351 @@
+CCS PCH C Compiler, Version 5.085, 47635               07-Nov-23 14:33
+
+               Filename:   D:\Microcontrollers\PWM\t2PWM.lst
+
+               ROM used:   350 bytes (1%)
+                           Largest free fragment is 32418
+               RAM used:   72 (5%) at main() level
+                           72 (5%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0004
+.................... #include <18f4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay (clock =20000000) 
+.................... #fuses HS, NOWDT, NOLVP 
+.................... #include "../Library/myLibrary.h" 
+.................... // A library for the PIC18F4520 
+....................  
+.................... int *TRISA = 0xF92; // Connect to TRISx 
+.................... int *TRISB = 0xF93; 
+.................... int *TRISC = 0xF94; 
+.................... int *TRISD = 0xF95; 
+.................... int *TRISE = 0xF96; 
+....................  
+.................... int *LATA = 0xF89;  // Connect to LATx 
+.................... int *LATB = 0xF8A; 
+.................... int *LATC = 0xF8B; 
+.................... int *LATD = 0xF8C; 
+.................... int *LATE = 0xF8D; 
+....................  
+.................... int *PORTA = 0xF80; // Connect to LATx 
+.................... int *PORTB = 0xF81; 
+.................... int *PORTC = 0xF82; 
+.................... int *PORTD = 0xF83; 
+.................... int *PORTE = 0xF84; 
+....................  
+.................... struct _adcon0 { 
+....................    int ADON:1; 
+....................    int GODONE:1; 
+....................    int CHSx:4; 
+....................    int unused:2; 
+.................... }; 
+.................... struct _adcon0 *ADCON0 = 0xFC2; 
+....................  
+.................... struct _adcon1 {   // Analog vs digital 
+....................    int PCFGx:4; 
+....................    int VCFG0:1; 
+....................    int VCFG1:1; 
+....................    int unused:2; 
+.................... }; 
+.................... struct _adcon1 *ADCON1 = 0xFC1; 
+....................  
+.................... struct _adcon2 { 
+....................    int ADCSx:3; 
+....................    int ACQTx:3; 
+....................    int unused:1; 
+....................    int ADFM:1; 
+.................... }; 
+.................... struct _adcon2 *ADCON2 = 0xFC0; 
+....................  
+.................... int16 *Q = 0xFC3; 
+.................... int *ADRESH = 0xFC4; 
+.................... int *ADRESL = 0xFC3; 
+....................  
+.................... struct _intcon { 
+....................    int RBIF:1; 
+....................    int INT0IF:1; 
+....................    int TMR0IF:1; 
+....................    int RBIE:1; 
+....................    int INT0IE:1; 
+....................    int TMR0IE:1; 
+....................    int PEIE:1; 
+....................    int GIE:1; 
+.................... }; 
+.................... struct _intcon *INTCON = 0xFF2; 
+....................  
+.................... struct _intcon3 { 
+....................    int INT1IF:1; 
+....................    int INT2IF:1; 
+....................    int unused:1; 
+....................    int INT1IE:1; 
+....................    int INT2IE:1; 
+....................    int notused:1; 
+....................    int INT1IP:1; 
+....................    int INT2IP:1; 
+.................... }; 
+.................... struct _intcon3 *INTCON3 = 0xFF0; 
+....................  
+.................... struct _intcon2 {  // Interrupts 
+....................    int RBIP:1; 
+....................    int unused:1; 
+....................    int TMR0IP:1; 
+....................    int notused:1; 
+....................    int INTEDG2:1; 
+....................    int INTEDG1:1; 
+....................    int INTEDG0:1; 
+....................    int RBPU:1; 
+.................... }; 
+.................... struct _intcon2 *INTCON2 = 0xFF1; 
+....................  
+.................... struct _pie1 { 
+....................    int TMR1IE:1; 
+....................    int TMR2IE:1; 
+....................    int CCP1IE:1; 
+....................    int SSPIE:1; 
+....................    int TXIE:1; 
+....................    int RCIE:1; 
+....................    int ADIE:1; 
+....................    int PSPIE:1; 
+.................... }; 
+.................... struct _pie1 *PIE1 = 0xF9D; 
+....................  
+.................... struct _t1con { 
+....................    int TMR1ON:1; 
+....................    int TMR1CS:1; 
+....................    int T1SYNC:1; 
+....................    int T1OSCEN:1; 
+....................    int T1CKPSx:2; 
+....................    int T1RUN: 1; 
+....................    int RD16:1; 
+.................... }; 
+.................... struct _t1con *T1CON = 0xFCD; 
+....................  
+.................... struct _t2con { 
+....................    int T2CKPSx:2; 
+....................    int TMR2ON:1; 
+....................    int T2OUTPSx:4; 
+....................    int unused:1; 
+.................... }; 
+.................... struct _t2con *T2CON = 0xFCA; 
+....................  
+.................... struct _ccpxcon { 
+....................    int CCPxMx:4; 
+....................    int DCxBx:2; 
+....................    int unused:2; 
+.................... }; 
+.................... struct _ccpxcon *CCP1CON = 0xFBD; 
+.................... struct _ccpxcon *CCP2CON = 0xFBA; 
+....................  
+.................... int16 *CCPR1 = 0xFBE; 
+.................... int *CCPR1L = 0xFBE; 
+.................... int *PR2 = 0xFCB; 
+....................  
+.................... struct _eccplas { 
+....................    int PSSBD:2; 
+....................    int PSSAC:2; 
+....................    int ECCPAS:3; 
+....................    int ECCPASE:1; 
+.................... }; 
+.................... struct _eccplas *ECCP1AS = 0xFB6; 
+....................  
+....................  
+....................  
+....................  
+.................... main(){ 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  MOVLW  0F
+000A:  MOVWF  05
+000C:  MOVLW  92
+000E:  MOVWF  04
+0010:  MOVLW  0F
+0012:  MOVWF  07
+0014:  MOVLW  93
+0016:  MOVWF  06
+0018:  MOVLW  0F
+001A:  MOVWF  09
+001C:  MOVLW  94
+001E:  MOVWF  08
+0020:  MOVLW  0F
+0022:  MOVWF  0B
+0024:  MOVLW  95
+0026:  MOVWF  0A
+0028:  MOVLW  0F
+002A:  MOVWF  0D
+002C:  MOVLW  96
+002E:  MOVWF  0C
+0030:  MOVLW  0F
+0032:  MOVWF  0F
+0034:  MOVLW  89
+0036:  MOVWF  0E
+0038:  MOVLW  0F
+003A:  MOVWF  11
+003C:  MOVLW  8A
+003E:  MOVWF  10
+0040:  MOVLW  0F
+0042:  MOVWF  13
+0044:  MOVLW  8B
+0046:  MOVWF  12
+0048:  MOVLW  0F
+004A:  MOVWF  15
+004C:  MOVLW  8C
+004E:  MOVWF  14
+0050:  MOVLW  0F
+0052:  MOVWF  17
+0054:  MOVLW  8D
+0056:  MOVWF  16
+0058:  MOVLW  0F
+005A:  MOVWF  19
+005C:  MOVLW  80
+005E:  MOVWF  18
+0060:  MOVLW  0F
+0062:  MOVWF  1B
+0064:  MOVLW  81
+0066:  MOVWF  1A
+0068:  MOVLW  0F
+006A:  MOVWF  1D
+006C:  MOVLW  82
+006E:  MOVWF  1C
+0070:  MOVLW  0F
+0072:  MOVWF  1F
+0074:  MOVLW  83
+0076:  MOVWF  1E
+0078:  MOVLW  0F
+007A:  MOVWF  21
+007C:  MOVLW  84
+007E:  MOVWF  20
+0080:  MOVLW  0F
+0082:  MOVWF  23
+0084:  MOVLW  C2
+0086:  MOVWF  22
+0088:  MOVLW  0F
+008A:  MOVWF  25
+008C:  MOVLW  C1
+008E:  MOVWF  24
+0090:  MOVLW  0F
+0092:  MOVWF  27
+0094:  MOVLW  C0
+0096:  MOVWF  26
+0098:  MOVLW  0F
+009A:  MOVWF  29
+009C:  MOVLW  C3
+009E:  MOVWF  28
+00A0:  MOVLW  0F
+00A2:  MOVWF  2B
+00A4:  MOVLW  C4
+00A6:  MOVWF  2A
+00A8:  MOVLW  0F
+00AA:  MOVWF  2D
+00AC:  MOVLW  C3
+00AE:  MOVWF  2C
+00B0:  MOVLW  0F
+00B2:  MOVWF  2F
+00B4:  MOVLW  F2
+00B6:  MOVWF  2E
+00B8:  MOVLW  0F
+00BA:  MOVWF  31
+00BC:  MOVLW  F0
+00BE:  MOVWF  30
+00C0:  MOVLW  0F
+00C2:  MOVWF  33
+00C4:  MOVLW  F1
+00C6:  MOVWF  32
+00C8:  MOVLW  0F
+00CA:  MOVWF  35
+00CC:  MOVLW  9D
+00CE:  MOVWF  34
+00D0:  MOVLW  0F
+00D2:  MOVWF  37
+00D4:  MOVLW  CD
+00D6:  MOVWF  36
+00D8:  MOVLW  0F
+00DA:  MOVWF  39
+00DC:  MOVLW  CA
+00DE:  MOVWF  38
+00E0:  MOVLW  0F
+00E2:  MOVWF  3B
+00E4:  MOVLW  BD
+00E6:  MOVWF  3A
+00E8:  MOVLW  0F
+00EA:  MOVWF  3D
+00EC:  MOVLW  BA
+00EE:  MOVWF  3C
+00F0:  MOVLW  0F
+00F2:  MOVWF  3F
+00F4:  MOVLW  BE
+00F6:  MOVWF  3E
+00F8:  MOVLW  0F
+00FA:  MOVWF  41
+00FC:  MOVLW  BE
+00FE:  MOVWF  40
+0100:  MOVLW  0F
+0102:  MOVWF  43
+0104:  MOVLW  CB
+0106:  MOVWF  42
+0108:  MOVLW  0F
+010A:  MOVWF  45
+010C:  MOVLW  B6
+010E:  MOVWF  44
+0110:  MOVF   FC1,W
+0112:  ANDLW  C0
+0114:  IORLW  0F
+0116:  MOVWF  FC1
+0118:  MOVLW  07
+011A:  MOVWF  FB4
+....................   *TRISC = 0x00;           // CCP1 at C2 
+011C:  MOVFF  08,FE9
+0120:  MOVFF  09,FEA
+0124:  CLRF   FEF
+....................   CCP1CON->CCPxMx = 0xC;   // PWM Mode 
+0126:  MOVFF  3A,FE9
+012A:  MOVFF  3B,FEA
+012E:  MOVLW  F0
+0130:  ANDWF  FEF,W
+0132:  IORLW  0C
+0134:  MOVWF  FEF
+....................   *PR2 = 200;              // Tpwm = (PR2+1) 
+0136:  MOVFF  42,FE9
+013A:  MOVFF  43,FEA
+013E:  MOVLW  C8
+0140:  MOVWF  FEF
+....................   *CCPR1L = 50;            // 50/100   50% DC 
+0142:  MOVFF  40,FE9
+0146:  MOVFF  41,FEA
+014A:  MOVLW  32
+014C:  MOVWF  FEF
+....................   T2CON->TMR2ON = 1;       //Timer On 
+014E:  MOVFF  38,FE9
+0152:  MOVFF  39,FEA
+0156:  BSF    FEF.2
+....................   while(1){ 
+0158:  GOTO   0158
+....................   } 
+.................... } 
+....................  
+015C:  SLEEP 
+....................    
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
