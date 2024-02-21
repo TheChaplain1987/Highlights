@@ -1,0 +1,183 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A-01B TRISA
+01C-01D TRISB
+01E-01F TRISC
+020-021 TRISD
+022-023 TRISE
+024-025 LATA
+026-027 LATB
+028-029 LATC
+02A-02B LATD
+02C-02D LATE
+02E-02F PORTA
+030-031 PORTB
+032-033 PORTC
+034-035 PORTD
+036-037 PORTE
+038-039 ADCON0
+03A-03B ADCON1
+03C-03D ADCON2
+03E-03F Q
+040-041 ADRESH
+042-043 ADRESL
+044-045 INTCON
+046-047 INTCON3
+048-049 INTCON2
+04A-04B PIE1
+04C-04D T1CON
+04E-051 Vin
+052     index
+053     lcd_init.i
+053     MAIN.@SCRATCH1
+054     lcd_init.@SCRATCH1
+054     MAIN.@SCRATCH2
+055     MAIN.@SCRATCH3
+056     MAIN.@SCRATCH4
+057     @PSTRINGCN_780.P1
+057-05A @PRINTF_L32D_780FPFPF.P2
+058     @PSTRINGCN_780.@SCRATCH1
+059     @PSTRINGCN_780.@SCRATCH2
+05B     @PRINTF_L32D_780FPFPF.P1
+05C     @PRINTF_L32D_780FPFPF.@SCRATCH1
+05D     @PRINTF_L32D_780FPFPF.@SCRATCH2
+05E     @PRINTF_L32D_780FPFPF.@SCRATCH3
+05F     @PRINTF_L32D_780FPFPF.@SCRATCH4
+060     @PRINTF_L32D_780FPFPF.@SCRATCH5
+061     @PRINTF_L32D_780FPFPF.@SCRATCH6
+062     @PRINTF_L32D_780FPFPF.@SCRATCH7
+063     @PRINTF_L32D_780FPFPF.@SCRATCH8
+064     lcd_putc.c
+064-067 @FTOSD.P1
+064-067 @DIV3232.P2
+065     @delay_ms1.P1
+065     lcd_gotoxy.x
+066     lcd_gotoxy.y
+067     lcd_gotoxy.address
+068-06B @DIV3232.P1
+068     lcd_gotoxy.@SCRATCH1
+068     @FTOSD.@SCRATCH1
+069     lcd_send_byte.address
+06A     lcd_send_byte.n
+06B     lcd_read_byte.low
+06B     lcd_send_byte.@SCRATCH1
+06C     lcd_read_byte.high
+06C     lcd_send_nibble.n
+06C     @DIV3232.@SCRATCH1
+06D     lcd_read_byte.@SCRATCH1
+06D     @DIV3232.@SCRATCH2
+06E     @DIV3232.@SCRATCH3
+06F     @DIV3232.@SCRATCH4
+070     @DIV3232.@SCRATCH5
+071     int_ad_isr.@SCRATCH1
+072     int_ad_isr.@SCRATCH2
+073-076 @MULFF.P1
+073-074 @ITOF.P2
+077-07A @MULFF.P1
+07B     @MULFF.@SCRATCH1
+07C     @MULFF.@SCRATCH2
+07D     @MULFF.@SCRATCH3
+F83     lcd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000BA  LCD_INIT_STRING.call
+0000CA  LCD_INIT_STRING.data
+0000CE  int_ext0_isr
+0000D6  @ITOF
+00010E  @MULFF
+000200  int_ad_isr
+000250  @const798.call
+00025A  @delay_ms1
+000280  lcd_send_nibble
+00029E  lcd_read_byte
+0002DA  lcd_send_byte
+000310  lcd_init
+00034A  lcd_gotoxy
+00036E  lcd_putc
+0003B0  @PSTRINGCN_780
+0003D0  @FTOSD
+000410  @DIV3232
+00049E  @PRINTF_L32D_780FPFPF
+000624  MAIN
+000624  @cinit1
+000712  @cinit2
+
+Project Directory:
+    D:\Microcontrollers\Exam\
+
+Project Files:
+    BenchExam.c                                             [24-Oct-23 14:24  CRC=1A21A14D]
+    C:\Program Files (x86)\PICC\Devices\18f4520.h           [17-Apr-19 14:56  CRC=BB1FBD69]
+    ..\Library\myLibrary.h                                  [18-Oct-23 12:42  CRC=41AAEC28]
+    ..\Library\modifiedlcd.h                                [12-Sep-23 16:20  CRC=D13833BC]
+
+Source signature=B95CB256
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=06B8
+
+Units:
+    D:\Microcontrollers\Exam\BenchExam (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   BenchExam.xsym
+    Errors:      BenchExam.err
+    Ext Symbols: BenchExam.esym
+    INHX32:      BenchExam.hex
+    Symbols:     BenchExam.sym
+    List:        BenchExam.lst
+    Debug/COFF:  BenchExam.cof
+    Project:     BenchExam.ccspjt
+    Call Tree:   BenchExam.tre
+    Statistics:  BenchExam.STA

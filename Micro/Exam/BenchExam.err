@@ -1,0 +1,24 @@
+Compiling D:\Microcontrollers\Exam\BenchExam on 25-Oct-23 at 13:42
+>>> Warning 203 "D:\Microcontrollers\Exam\BenchExam.c" Line 45(1,1): Condition always TRUE
+>>> Warning 208 "D:\Microcontrollers\Exam\BenchExam.c" Line 20(1,5): Function not void and does not return a value  MAIN
+>>> Warning 216 "D:\Microcontrollers\Exam\BenchExam.c" Line 68(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 5(6,11): Variable never used:   TRISC
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 6(6,11): Variable never used:   TRISD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 7(6,11): Variable never used:   TRISE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 9(6,10): Variable never used:   LATA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 10(6,10): Variable never used:   LATB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 11(6,10): Variable never used:   LATC
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 12(6,10): Variable never used:   LATD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 13(6,10): Variable never used:   LATE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 15(6,11): Variable never used:   PORTA
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 16(6,11): Variable never used:   PORTB
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 17(6,11): Variable never used:   PORTC
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 18(6,11): Variable never used:   PORTD
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 19(6,11): Variable never used:   PORTE
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 46(6,12): Variable never used:   ADRESH
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 47(6,12): Variable never used:   ADRESL
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 71(18,25): Variable never used:   INTCON3
+>>> Warning 202 "D:\Microcontrollers\Library\myLibrary.h" Line 106(16,21): Variable never used:   T1CON
+      Memory usage:   ROM=7%      RAM=6% - 8%
+      0 Errors,  20 Warnings.
+Build Successful.
